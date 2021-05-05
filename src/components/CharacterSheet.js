@@ -1,4 +1,5 @@
 import React from 'react';
+import { data } from '../fakeDb/fakeData';
 
 function CharacterSheet() {
 
@@ -6,30 +7,48 @@ function CharacterSheet() {
     <div>
       <div className="sheet-row">
         <div className="sheet-div">
-          Hello
+          {data.name}
+        </div>
+          <div className="sheet-div">
+        {data.species}
         </div>
         <div className="sheet-div">
-          there
+          {data.class}
         </div>
         <div className="sheet-div">
-          i'm
-        </div>
-        <div className="sheet-div">
-          a
-        </div>
-        <div className="sheet-div">
-          character
+          {data.career}
         </div>
       </div>
       <div className="sheet-row">
         <div className="sheet-div">
-          here's
+          WS: {data.characteristics.WS}
         </div>
         <div className="sheet-div">
-          my
+          DS: {data.characteristics.DS}
         </div>
         <div className="sheet-div">
-          sheet
+          S: {data.characteristics.S}
+        </div>
+        <div className="sheet-div">
+          T: {data.characteristics.T}
+        </div>
+        <div className="sheet-div">
+          I: {data.characteristics.I}
+        </div>
+        <div className="sheet-div">
+          Ag: {data.characteristics.Ag}
+        </div>
+        <div className="sheet-div">
+          Dex: {data.characteristics.Dex}
+        </div>
+        <div className="sheet-div">
+          Int: {data.characteristics.Int}
+        </div>
+        <div className="sheet-div">
+          WP: {data.characteristics.WP}
+        </div>
+        <div className="sheet-div">
+          Fel: {data.characteristics.Fel}
         </div>
       </div>
     </div>
