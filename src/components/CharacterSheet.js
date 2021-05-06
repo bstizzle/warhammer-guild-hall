@@ -9,13 +9,13 @@ const CharacterSheet = () => {
   const char = useSelector(selectChar);
   console.log(char)
 
-  // useEffect(() => {
-  //   dispatch(setChar(data))
-  // }, [dispatch])
-
-  function charDispatch(){
+  useEffect(() => {
     dispatch(setChar(data))
-  }
+  }, [dispatch])
+
+  // function charDispatch(){
+  //   dispatch(setChar(data))
+  // }
 
   function totalSkill({stat, adv}) {
     const skill = data.stats[stat] + adv;
@@ -33,7 +33,7 @@ const CharacterSheet = () => {
 
   return(
     <div>
-      <button onClick={charDispatch}>GET CHAR</button>
+      {/* <button onClick={charDispatch}>GET CHAR</button> */}
       {char.name}
       {/* Refactor out into details component */}
       <div className="sheet-row">
