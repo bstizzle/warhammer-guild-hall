@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../redux/characterSlice';
 
-function Stats() {
+const Stats = () => {
   const char = useSelector(selectChar)
 
   function statJSX(stat){
