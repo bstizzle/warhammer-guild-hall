@@ -3,7 +3,9 @@ import React from 'react';
 const Header = () => {
 
   return(
-    <h1>WARHAMMER GUILD HALL</h1>
+    <div className="header-container">
+      <h1>WARHAMMER GUILD HALL</h1>
+    </div>
   );
 }
 
