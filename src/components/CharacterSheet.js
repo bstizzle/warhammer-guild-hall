@@ -1,16 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { data } from '../fakeDb/fakeData';
 
-function CharacterSheet() {
-  const bscSkillKeys = Object.keys(data.basicSkills)
-  const advSkillKeys = Object.keys(data.advSkills)
+import { useSelector, useDispatch } from 'react-redux';
+import { setChar, selectChar } from '../redux/characterSlice';
+
+const CharacterSheet = () => {
+  const dispatch = useDispatch();
+  const char = useSelector(selectChar);
+  console.log(char)
+
+  // useEffect(() => {
+  //   dispatch(setChar(data))
+  // }, [dispatch])
+
+  function charDispatch(){
+    dispatch(setChar(data))
+  }
+
   function totalSkill({stat, adv}) {
     const skill = data.stats[stat] + adv;
     return skill;
   }
 
+  let bscSkillKeys = Object.keys(data.basicSkills);
+  let advSkillKeys = Object.keys(data.advSkills);
+  // let bscSkillKeys;
+  // let advSkillKeys;
+  // if(char !== null) {
+  //   bscSkillKeys = Object.keys(char.basicSkills)
+  //   advSkillKeys = Object.keys(char.advSkills)
+  // }
+
   return(
     <div>
+      <button onClick={charDispatch}>GET CHAR</button>
+      {char.name}
       {/* Refactor out into details component */}
       <div className="sheet-row">
         <div className="sheet-div">
@@ -33,7 +57,7 @@ function CharacterSheet() {
           WS: {data.stats.WS}
         </div>
         <div className="sheet-div">
-          DS: {data.stats.DS}
+          BS: {data.stats.BS}
         </div>
         <div className="sheet-div">
           S: {data.stats.S}
@@ -75,10 +99,10 @@ function CharacterSheet() {
         <div className="sheet-div">
           Advanced Skills
           <div className="sheet-div">
-            {advSkillKeys[0]}: {totalSkill(data.advSkills["Lore (Witches)"])}
+            {advSkillKeys[1]}: {totalSkill(data.advSkills["Lore (Witches)"])}
           </div>
           <div className="sheet-div">
-            {advSkillKeys[1]}: {totalSkill(data.advSkills["Melee (Polearm)"])}
+            {advSkillKeys[0]}: {totalSkill(data.advSkills["Melee (Polearm)"])}
           </div>
         </div>
       </div>
