@@ -16,15 +16,37 @@ const Skills = () => {
   let key = 0;
   const bscSkills = bscSkillKeys.map(k => {
     return(
-      <div key={key++} className="sheet-div">
-        {k}: {totalSkill(char.basicSkills[k])}
+      <div key={key++} className="skill-row">
+        <div key={key++} className="skill-name">
+          {k}:
+        </div>
+        <div key={key++} className="sheet-div">
+          {char.basicSkills[k].stat}
+        </div>
+        <div key={key++} className="sheet-div">
+          {char.basicSkills[k].adv}
+        </div>
+        <div key={key++} className="sheet-div">
+          {totalSkill(char.basicSkills[k])}
+        </div>
       </div>
     );
   })
   const advSkills = advSkillKeys.map(k => {
     return(
-      <div key={key++} className="sheet-div">
-        {k}: {totalSkill(char.advSkills[k])}
+      <div key={key++} className="skill-row">
+        <div key={key++} className="skill-name">
+          {k}:
+        </div>
+        <div key={key++} className="sheet-div">
+          {char.advSkills[k].stat}
+        </div>
+        <div key={key++} className="sheet-div">
+          {char.advSkills[k].adv}
+        </div>
+        <div key={key++} className="sheet-div">
+          {totalSkill(char.advSkills[k])}
+        </div>
       </div>
     );
   })
@@ -33,11 +55,13 @@ const Skills = () => {
   return(
     <div className="sheet-row">
       <div className="sheet-div">
-        Basic Skills
+        Basic Skills<br/>
+        Name - Stat - Adv - Total
         {bscSkills}
       </div>
       <div className="sheet-div">
-        Advanced Skills
+        Advanced Skills<br/>
+        Name - Stat - Adv - Total
         {advSkills}
       </div>
     </div>

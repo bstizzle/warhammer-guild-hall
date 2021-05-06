@@ -46,12 +46,35 @@ code {
   font-family: body;
 }
 
+.sheet-container h2 {
+  border: 1px solid black;
+  border-radius: 5%;
+  background-color: white;
+  padding: 10px;
+  margin: auto;
+  max-width: 40vw;
+}
+
 .sheet-row {
   display: flex;
   justify-content: center;
 }
 
 .sheet-div {
+  border: 1px solid black;
+  border-radius: 5%;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: right;
+}
+
+.skill-name {
+  flex-grow: 1;
   border: 1px solid black;
   border-radius: 5%;
   background-color: white;

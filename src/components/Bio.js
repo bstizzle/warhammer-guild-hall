@@ -9,9 +9,6 @@ const Bio = () => {
   return(
     <div className="sheet-row">
       <div className="sheet-div">
-        {char.name}
-      </div>
-      <div className="sheet-div">
         {char.species}
       </div>
       <div className="sheet-div">
