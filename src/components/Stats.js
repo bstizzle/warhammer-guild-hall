@@ -5,28 +5,20 @@ import { selectChar } from '../redux/characterSlice';
 
 const Stats = () => {
   const char = useSelector(selectChar)
+  const statKeys = Object.keys(char.stats)
 
-  function statJSX(stat){
+  const allStats = statKeys.map(s => {
     return(
-      <div className="sheet-div">
-        {stat}<br/>
-        {char.stats[stat]}
+      <div key={s} className="sheet-div">
+        {s}<br/>
+        {char.stats[s]}
       </div>
     )
-  }
+  })
 
   return(
     <div className="sheet-row">
-      {statJSX("WS")}
-      {statJSX("BS")}
-      {statJSX("S")}
-      {statJSX("T")}
-      {statJSX("I")}
-      {statJSX("Ag")}
-      {statJSX("Dex")}
-      {statJSX("Int")}
-      {statJSX("WP")}
-      {statJSX("Fel")}
+      {allStats}
     </div>
   );
 }

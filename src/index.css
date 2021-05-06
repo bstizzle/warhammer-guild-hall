@@ -44,6 +44,7 @@ code {
 
 .sheet-container {
   font-family: body;
+  color: rgb(255,255,255);
   margin: auto;
   width: 80%;
 }
@@ -54,9 +55,9 @@ code {
 }
 
 .sheet-div {
-  border: 1px solid black;
+  border: 1px solid rgb(255,255,255);
   border-radius: 5%;
-  background-color: white;
+  background-color: rgb(44,53,57);
   padding: 10px;
   margin: 10px;
 }
@@ -78,9 +79,9 @@ code {
 
 .name-div {
   flex-grow: 1;
-  border: 1px solid black;
+  border: 1px solid rgb(255,255,255);
   border-radius: 5%;
-  background-color: white;
+  background-color: rgb(44,53,57);
   padding: 10px;
   margin: 10px;
 }

@@ -1,11 +1,13 @@
 export const data = {
-  name: "Strathot",
-  species: "Wood Elf",
-  class: "Warrior",
-  career: "Knight",
-  careerLvl: "Knight",
-  careerPath: "Trapper, Hunter*, Knight",
-  status: "Silver 5",
+  bio: {
+    "Name": "Strathot",
+    "Species": "Wood Elf",
+    "Class": "Warrior",
+    "Career": "Knight",
+    "Career Level": "Knight",
+    "Career Path": "Trapper, Hunter*, Knight",
+    "Status": "Silver 5"
+  },
   stats: {
     "WS": 10,
     "BS": 20,

@@ -4,34 +4,46 @@ import { selectChar } from '../redux/characterSlice';
 
 const Bio = () => {
   const char = useSelector(selectChar)
+  const bio = char.bio
+
+  //figure out a way to automate two static rows
+  
+  // const bioKeys = Object.keys(bio)
+  // const fullBio = bioKeys.map(b => {
+  //   return(
+  //     <div key={b} className="sheet-div">
+  //       {b}: {bio[b]}
+  //     </div>
+  //   )
+  // })
 
   return(
     <div className="sheet-row">
-      <div className="name-div" style={{fontSize: "5vw", paddingTop: "30px"}}>
-        {char.name}
-      </div>
-      <div className="sheet-div" style={{flexGrow: 3}}>
+      <div className="sheet-div">
         <div className="bio-column">
           <div className="bio-row">
             <div className="sheet-div">
-              Species: {char.species}
+              Name: {bio["Name"]}
             </div>
             <div className="sheet-div">
-              Class: {char.class}
+              Species: {bio["Species"]}
             </div>
             <div className="sheet-div">
-              Career: {char.career}
+              Class: {bio["Class"]}
             </div>
             <div className="sheet-div">
-              Career Level: {char.careerLvl}
+              Career: {bio["Career"]}
             </div>
           </div>
           <div className="bio-row">
-            <div className="sheet-div">
-              Career Path: {char.careerPath}
+            <div className="sheet-div" style={{flexGrow: 1}}>
+              Career Path: {bio["Career Path"]}
             </div>
             <div className="sheet-div">
-              Status: {char.status}
+              Career Level: {bio["Career Level"]}
+            </div>
+            <div className="sheet-div">
+              Status: {bio["Status"]}
             </div>
           </div>
         </div>

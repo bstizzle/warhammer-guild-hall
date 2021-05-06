@@ -22,7 +22,7 @@ const CharacterSheet = () => {
 
   return(
     <div className="sheet-container">
-      <Bio />
+      {char.bio ? <Bio /> : null}
       {char.stats ? <Stats /> : null}
       {char.basicSkills ? <Skills /> : null}
       <button onClick={()=>history.push("/")}>BACK TO HOME PAGE</button>
