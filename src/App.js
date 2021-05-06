@@ -1,17 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import CharacterSheet from './components/CharacterSheet';
-import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <CharacterSheet />
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-      </header>
+    <div className="app-container">
+      <Header />
+      <CharacterSheet />
     </div>
   );
 }

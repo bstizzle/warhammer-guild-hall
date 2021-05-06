@@ -9,7 +9,8 @@ const Stats = () => {
   function statJSX(stat){
     return(
       <div className="sheet-div">
-        {stat}: {char.stats[stat]}
+        {stat}<br/>
+        {char.stats[stat]}
       </div>
     )
   }

@@ -12,13 +12,23 @@ code {
     monospace;
 }
 
-.sheet-div {
-  border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
+
+.app-container {
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+}
+
+.sheet-container {
+  font-style: italic;
 }
 
 .sheet-row {
   display: flex;
   justify-content: center;
+}
+
+.sheet-div {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
 }
