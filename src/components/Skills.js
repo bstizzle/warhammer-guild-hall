@@ -17,7 +17,7 @@ const Skills = () => {
   const bscSkills = bscSkillKeys.map(k => {
     return(
       <div key={key++} className="skill-row">
-        <div key={key++} className="skill-name">
+        <div key={key++} className="name-div">
           {k}:
         </div>
         <div key={key++} className="sheet-div">
@@ -35,7 +35,7 @@ const Skills = () => {
   const advSkills = advSkillKeys.map(k => {
     return(
       <div key={key++} className="skill-row">
-        <div key={key++} className="skill-name">
+        <div key={key++} className="name-div">
           {k}:
         </div>
         <div key={key++} className="sheet-div">

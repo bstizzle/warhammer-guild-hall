@@ -22,7 +22,6 @@ const CharacterSheet = () => {
 
   return(
     <div className="sheet-container">
-      <h2>{char.name}</h2>
       <Bio />
       {char.stats ? <Stats /> : null}
       {char.basicSkills ? <Skills /> : null}

@@ -1,8 +1,11 @@
 export const data = {
-  name: "test-name",
-  species: "test-species",
-  class: "test-class",
-  career: "test-career",
+  name: "Strathot",
+  species: "Wood Elf",
+  class: "Warrior",
+  career: "Knight",
+  careerLvl: "Knight",
+  careerPath: "Trapper, Hunter*, Knight",
+  status: "Silver 5",
   stats: {
     "WS": 10,
     "BS": 20,
