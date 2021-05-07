@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import { selectChar } from '../redux/characterSlice';
+import { selectChar } from '../../redux/characterSlice';
 
 const Skills = () => {
   const char = useSelector(selectChar)

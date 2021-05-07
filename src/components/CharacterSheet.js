@@ -6,10 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 //component imports
 import { data } from '../fakeDb/fakeData';
-import Stats from './Stats';
-import Skills from './Skills';
-import Bio from './Bio';
-import Trappings from './Trappings';
+import { Trappings } from './details-components/detailsExport';
+import { Stats, Skills, Bio } from './bio-components/bioExport';
 
 const CharacterSheet = () => {
   const history = useHistory();

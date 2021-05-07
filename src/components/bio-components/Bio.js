@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectChar } from '../redux/characterSlice';
+import { selectChar } from '../../redux/characterSlice';
 
 const Bio = () => {
   const char = useSelector(selectChar)
