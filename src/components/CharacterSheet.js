@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 //component imports
 import { data } from '../fakeDb/fakeData';
 import { Trappings, Armor, Weapons, DetailSelector } from './details-components/detailsExport';
-import { Stats, Skills, Bio } from './bio-components/bioExport';
+import { Stats, Skills, Bio, Talents, Fate, Resolve } from './bio-components/bioExport';
 
 const CharacterSheet = () => {
   const history = useHistory();
@@ -32,6 +32,11 @@ const CharacterSheet = () => {
           </div>
           <div className="sheet-row">
             {char.basicSkills ? <Skills /> : null}
+          </div>
+          <div className="sheet-row">
+            {char.talents ? <Talents /> : null}
+            {char.fate ? <Fate /> : null}
+            {char.resolve ? <Resolve /> : null}
           </div>
         </div>
         <div className="sheet-div" style={{flexGrow: 1}}>

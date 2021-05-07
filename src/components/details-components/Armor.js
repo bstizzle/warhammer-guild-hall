@@ -4,29 +4,16 @@ const Armor = () => {
 
   return(
     <div className="sheet-column">
-      Armor
-      <div className="sheet-row">
-        <div className="sheet-div" style={{flexGrow: 1}}>
-          Name
-        </div>
-        <div className="sheet-div">
-          Location
-        </div>
-        <div className="sheet-div">
-          Enc.
-        </div>
-        <div className="sheet-div">
-          AP
-        </div>
-        <div className="sheet-div">
-          Qualities
-        </div>
-      </div>
+      Armor<br/>
+      Name - Location - Enc. - AP - Qualities
       <div className="sheet-row">
       </div>
       <div className="sheet-row">
         <div className="sheet-div" style={{flexGrow: 1}}>
           Leather Jerkin
+        </div>
+        <div className="sheet-div">
+          Chest
         </div>
         <div className="sheet-div">
           1

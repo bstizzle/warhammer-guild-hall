@@ -16,7 +16,7 @@ export const GlobalStyles = createGlobalStyle`
     -o-background-size: cover;
     background-size: cover;
 
-    transition: all 0.25s linear;
+    transition: background 0.25s linear;
   }
   
   body {
@@ -61,7 +61,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: auto;
     width: 80%;
 
-    transition: all 0.25s linear;
+    transition: background-color 0.25s linear, color 0.25s linear;
   }
 
   .sheet-column {
@@ -81,7 +81,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 10px;
     margin: 10px;
 
-    transition: all 0.25s linear;
+    transition: background-color 0.25s linear, color 0.25s linear;
   }
   
   .bio-column {
@@ -107,7 +107,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 10px;
     margin: 10px;
 
-    transition: all 0.25s linear;
+    transition: background-color 0.25s linear, color 0.25s linear;
   }
   
   .demo-page {

@@ -39,5 +39,17 @@ export const data = {
       stat: "Int",
       adv: 10
     }
+  },
+  talents: {
+    "Roughrider": 1,
+    "Sturdy": 3
+  },
+  fate: {
+    "Fate": 2,
+    "Fortune": 2
+  },
+  resolve: {
+    "Resolve": 3,
+    "Resilience": 3
   }
 }

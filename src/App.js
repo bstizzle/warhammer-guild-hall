@@ -10,7 +10,7 @@ import { lightTheme, darkTheme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const toggleTheme = () => {
     if(theme === 'light') {
       setTheme('dark');

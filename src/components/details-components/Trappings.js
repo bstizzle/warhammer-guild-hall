@@ -4,15 +4,8 @@ const Trappings = () => {
 
   return(
     <div className="sheet-column">
-      Trappings
-      <div className="sheet-row">
-        <div className="sheet-div" style={{flexGrow: 1}}>
-          Name
-        </div>
-        <div className="sheet-div">
-          Enc.
-        </div>
-      </div>
+      Trappings<br/>
+      Name - Enc.
       <div className="sheet-row">
         <div className="sheet-div" style={{flexGrow: 1}}>
           Cloak
