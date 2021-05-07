@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import HeaderFont from '../fonts/moria-citadel.regular.ttf';
 import BodyFont from '../fonts/caslon-antique.regular.ttf';
-import Parchment from '../textures/parchment.jpg';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -11,11 +10,13 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    background: url(${Parchment}) no-repeat center center fixed; 
+    background: ${({ theme }) => theme.background};
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    transition: all 0.25s linear;
   }
   
   body {
@@ -44,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
   
   
   .app-container {
-    font-size: calc(10px + 2vmin);
+    font-size: calc(5px + 1vw);
     text-align: center;
   }
   
@@ -61,6 +62,11 @@ export const GlobalStyles = createGlobalStyle`
     width: 80%;
 
     transition: all 0.25s linear;
+  }
+
+  .sheet-column {
+    display: flex;
+    flex-direction: column;
   }
   
   .sheet-row {

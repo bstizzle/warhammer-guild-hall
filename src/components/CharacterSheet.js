@@ -9,6 +9,7 @@ import { data } from '../fakeDb/fakeData';
 import Stats from './Stats';
 import Skills from './Skills';
 import Bio from './Bio';
+import Trappings from './Trappings';
 
 const CharacterSheet = () => {
   const history = useHistory();
@@ -22,10 +23,44 @@ const CharacterSheet = () => {
 
   return(
     <div className="sheet-container">
-      {char.bio ? <Bio /> : null}
-      {char.stats ? <Stats /> : null}
-      {char.basicSkills ? <Skills /> : null}
+      <div className="sheet-row">
+        <div className="sheet-div" style={{flexGrow: 1}}>
+          <div className="sheet-row">
+            {char.bio ? <Bio /> : null}
+          </div>
+          <div className="sheet-row">
+            {char.stats ? <Stats /> : null}
+          </div>
+          <div className="sheet-row">
+            {char.basicSkills ? <Skills /> : null}
+          </div>
+        </div>
+        <div className="sheet-div" style={{flexGrow: 1}}>
+          <Trappings />
+        </div>
+      </div>
+
+
       <button onClick={()=>history.push("/")}>BACK TO HOME PAGE</button>
+
+      {/*
+        Fate/Resilience
+        Experience
+        Movement
+        Talents
+        Ambitions
+        Party
+        Armor
+        Armor Points
+        Trappings
+        Psychology
+        Corruption/Mutation
+        Weapons
+        Spells
+        Wounds
+        Wealth
+        Encumberance
+      */}
     </div>
   );
 }

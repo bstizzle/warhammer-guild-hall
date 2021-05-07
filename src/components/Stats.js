@@ -17,9 +17,9 @@ const Stats = () => {
   })
 
   return(
-    <div className="sheet-row">
-      {allStats}
-    </div>
+    <>
+    {allStats}
+    </>
   );
 }
 

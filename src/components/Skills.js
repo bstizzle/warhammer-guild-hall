@@ -53,7 +53,7 @@ const Skills = () => {
 
   // Refactor out into individual Skill components
   return(
-    <div className="sheet-row">
+    <>
       <div className="sheet-div">
         Basic Skills<br/>
         Name - Stat - Adv - Total
@@ -64,7 +64,7 @@ const Skills = () => {
         Name - Stat - Adv - Total
         {advSkills}
       </div>
-    </div>
+    </>
   );
 }
 

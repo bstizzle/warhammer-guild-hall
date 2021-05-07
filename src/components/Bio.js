@@ -18,7 +18,6 @@ const Bio = () => {
   // })
 
   return(
-    <div className="sheet-row">
       <div className="sheet-div">
         <div className="bio-column">
           <div className="bio-row">
@@ -48,7 +47,6 @@ const Bio = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
