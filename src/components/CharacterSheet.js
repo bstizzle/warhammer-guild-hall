@@ -51,18 +51,13 @@ const CharacterSheet = () => {
       <button onClick={()=>history.push("/")}>BACK TO HOME PAGE</button>
 
       {/*
-        Fate/Resilience
         Experience
         Movement
-        Talents
         Ambitions
         Party
-        Armor
         Armor Points
-        Trappings
         Psychology
         Corruption/Mutation
-        Weapons
         Spells
         Wounds
         Wealth

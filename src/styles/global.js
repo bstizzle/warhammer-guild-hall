@@ -109,8 +109,4 @@ export const GlobalStyles = createGlobalStyle`
 
     transition: background-color 0.25s linear, color 0.25s linear;
   }
-  
-  .demo-page {
-    background-color: white;
-  }
 `;
