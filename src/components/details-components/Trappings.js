@@ -3,7 +3,7 @@ import React from 'react';
 const Trappings = () => {
 
   return(
-    <div className="sheet-column">
+    <>
       Trappings<br/>
       Name - Enc.
       <div className="sheet-row">
@@ -22,7 +22,7 @@ const Trappings = () => {
           2
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

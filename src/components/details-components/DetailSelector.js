@@ -17,6 +17,9 @@ const DetailSelector = ({ setDetailPage }) => {
       <div className="sheet-div">
         <button onClick={handleSetDetail}>Weapons</button>
       </div>
+      <div className="sheet-div">
+        <button onClick={handleSetDetail}>Wounds</button>
+      </div>
     </div>
   );
 }

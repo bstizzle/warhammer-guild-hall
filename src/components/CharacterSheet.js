@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 //component imports
 import { data } from '../fakeDb/fakeData';
-import { Trappings, Armor, Weapons, DetailSelector } from './details-components/detailsExport';
+import { Trappings, Armor, Weapons, DetailSelector, Wounds } from './details-components/detailsExport';
 import { Stats, Skills, Bio, Talents, Fate, Resolve } from './bio-components/bioExport';
 
 const CharacterSheet = () => {
@@ -44,6 +44,7 @@ const CharacterSheet = () => {
           {detailPage === 'Trappings' ? <Trappings /> : null}
           {detailPage === 'Armor' ? <Armor /> : null}
           {detailPage === 'Weapons' ? <Weapons /> : null}
+          {detailPage === 'Wounds' ? <Wounds /> : null}
         </div>
       </div>
 

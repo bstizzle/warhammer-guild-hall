@@ -3,7 +3,7 @@ import React from 'react';
 const Armor = () => {
 
   return(
-    <div className="sheet-column">
+    <>
       Weapons<br/>
       Name - Enc. - Damage - Qualities
       <div className="sheet-row">
@@ -20,7 +20,7 @@ const Armor = () => {
           blank
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
