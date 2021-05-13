@@ -4,10 +4,6 @@ import CharacterSheet from './components/CharacterSheet';
 import Header from './components/Header';
 import Home from './components/Home';
 
-import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './styles/theme';
-import { GlobalStyles } from './styles/global';
-
 import { Button, Row, Col } from 'antd';
 
 function App() {
@@ -22,9 +18,6 @@ function App() {
 
   return (
     <>
-    <div className="app-container">
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <GlobalStyles />
       <Row>
         <Col span={24}>
         <Header />
@@ -39,8 +32,6 @@ function App() {
         <CharacterSheet />
       </Route>
       </Row>
-    </ThemeProvider>
-    </div>
     </>
   );
 }
