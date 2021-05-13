@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import HeaderFont from '../fonts/moria-citadel.regular.ttf';
 import BodyFont from '../fonts/caslon-antique.regular.ttf';
+import '../../node_modules/antd/dist/antd.css';
+
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -26,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: ${({ theme }) => theme.background};
   }
   
   code {

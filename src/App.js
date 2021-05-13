@@ -8,6 +8,8 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
 
+import { Button, Row, Col } from 'antd';
+
 function App() {
   const [theme, setTheme] = useState('dark');
   const toggleTheme = () => {
@@ -19,19 +21,27 @@ function App() {
   }
 
   return (
+    <>
     <div className="app-container">
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Header />
-      <button onClick={toggleTheme}>Toggle Theme</button>
+      <Row>
+        <Col span={24}>
+        <Header />
+        </Col>
+      </Row>
+      <Button type="primary" onClick={toggleTheme}>Toggle Theme</Button>
+      <Row>
       <Route exact path='/'>
         <Home />
       </Route>
       <Route path='/sheet'>
         <CharacterSheet />
       </Route>
+      </Row>
     </ThemeProvider>
     </div>
+    </>
   );
 }
 

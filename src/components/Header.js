@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { Col } from 'antd';
+
 const Header = () => {
 
   return(
-    <div className="header-container">
+    <Col>
       <h1>WARHAMMER GUILD HALL</h1>
-    </div>
+    </Col>
   );
 }
 
