@@ -25,8 +25,8 @@ const CharacterSheet = () => {
     <Row>
       <Col span={16}>
         {char.bio ? <Bio /> : null}
-        <Row gutter={[16, 16]}>
-          {char.stats ? <Stats /> : null}
+        {char.stats ? <Stats /> : null}
+        <Row>
           {char.fate ? <Fate /> : null}
           {char.resolve ? <Resolve /> : null}
           {char.stats ? <Wounds /> : null}

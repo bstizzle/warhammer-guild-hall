@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
-import { Col } from 'antd';
+import { Descriptions } from 'antd';
 
 const Stats = () => {
   const char = useSelector(selectChar)
@@ -11,17 +11,20 @@ const Stats = () => {
 
   const allStats = statKeys.map(s => {
     return(
-      <Col key={s} span={1}>
-        {s}<br/>
+      <Descriptions.Item key={s} label={s}>
         {char.stats[s]}
-      </Col>
+      </Descriptions.Item>
     )
   })
 
   return(
-    <>
+    <Descriptions
+      column={10}
+      size="small"
+      layout="vertical"
+      bordered>
       {allStats}
-    </>
+    </Descriptions>
   );
 }
 
