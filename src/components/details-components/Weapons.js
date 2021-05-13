@@ -1,25 +1,39 @@
 import React from 'react';
 
+import { Row, Col } from 'antd'
+
 const Armor = () => {
 
   return(
     <>
-      Weapons<br/>
-      Name - Enc. - Damage - Qualities
-      <div className="sheet-row">
-        <div className="sheet-div" style={{flexGrow: 1}}>
-          Sword
-        </div>
-        <div className="sheet-div">
-          1
-        </div>
-        <div className="sheet-div">
-          5
-        </div>
-        <div className="sheet-div">
-          blank
-        </div>
-      </div>
+    <Row>
+      <Col span={8}>
+        Name
+      </Col>
+      <Col span={4}>
+        Enc.
+      </Col>
+      <Col span={4}>
+        Damage
+      </Col>
+      <Col span={8}>
+        Qualities
+      </Col>
+    </Row>
+    <Row>
+      <Col span={8}>
+        Sword
+      </Col>
+      <Col span={4}>
+        1
+      </Col>
+      <Col span={4}>
+        5
+      </Col>
+      <Col span={8}>
+        blank
+      </Col>
+    </Row>
     </>
   );
 }

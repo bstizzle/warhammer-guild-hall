@@ -3,6 +3,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
+import { Row, Col } from 'antd';
+
 const Skills = () => {
   const char = useSelector(selectChar)
   const  bscSkillKeys = Object.keys(char.basicSkills)
@@ -16,55 +18,55 @@ const Skills = () => {
   let key = 0;
   const bscSkills = bscSkillKeys.map(k => {
     return(
-      <div key={key++} className="skill-row">
-        <div key={key++} className="name-div">
+      <Row key={key++} gutter={[16, 16]}>
+        <Col key={key++} span={12}>
           {k}:
-        </div>
-        <div key={key++} className="sheet-div">
+        </Col>
+        <Col key={key++} span={3}>
           {char.basicSkills[k].stat}
-        </div>
-        <div key={key++} className="sheet-div">
+        </Col>
+        <Col key={key++} span={3}>
           {char.basicSkills[k].adv}
-        </div>
-        <div key={key++} className="sheet-div">
+        </Col>
+        <Col key={key++} span={3}>
           {totalSkill(char.basicSkills[k])}
-        </div>
-      </div>
+        </Col>
+      </Row>
     );
   })
   const advSkills = advSkillKeys.map(k => {
     return(
-      <div key={key++} className="skill-row">
-        <div key={key++} className="name-div">
+      <Row key={key++} gutter={[16, 16]}>
+        <Col key={key++} span={12}>
           {k}:
-        </div>
-        <div key={key++} className="sheet-div">
+        </Col>
+        <Col key={key++} span={3}>
           {char.advSkills[k].stat}
-        </div>
-        <div key={key++} className="sheet-div">
+        </Col>
+        <Col key={key++} span={3}>
           {char.advSkills[k].adv}
-        </div>
-        <div key={key++} className="sheet-div">
+        </Col>
+        <Col key={key++} span={3}>
           {totalSkill(char.advSkills[k])}
-        </div>
-      </div>
+        </Col>
+      </Row>
     );
   })
 
   // Refactor out into individual Skill components
   return(
-    <>
-      <div className="sheet-div">
+    <Row>
+      <Col>
         Basic Skills<br/>
         Name - Stat - Adv - Total
         {bscSkills}
-      </div>
-      <div className="sheet-div">
+      </Col>
+      <Col>
         Advanced Skills<br/>
         Name - Stat - Adv - Total
         {advSkills}
-      </div>
-    </>
+      </Col>
+    </Row>
   );
 }
 

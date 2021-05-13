@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Col } from 'antd';
 
-const Header = () => {
+const Banner = () => {
 
   return(
     <Col>
@@ -11,4 +11,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default Banner;

@@ -3,22 +3,23 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
+import { Row, Col } from 'antd';
+
 const Resolve = () => {
   const char = useSelector(selectChar)
   const resolveKeys = Object.keys(char.resolve);
   const resolve = resolveKeys.map(f => {
     return(
-      <div key={f} className="sheet-div">
+      <Row key={f}>
         {f}: {char.resolve[f]}
-      </div>
+      </Row>
     )
   })
 
   return(
-    <div className="sheet-div">
-      Resolve<br/>
+    <Col span={4}>
       {resolve}
-    </div>
+    </Col>
   );
 }
 

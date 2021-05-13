@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
+import { Row, Col } from 'antd'
+
 const Bio = () => {
   const char = useSelector(selectChar)
   const bio = char.bio
@@ -18,35 +20,33 @@ const Bio = () => {
   // })
 
   return(
-      <div className="sheet-div">
-        <div className="bio-column">
-          <div className="bio-row">
-            <div className="sheet-div">
-              Name: {bio["Name"]}
-            </div>
-            <div className="sheet-div">
-              Species: {bio["Species"]}
-            </div>
-            <div className="sheet-div">
-              Class: {bio["Class"]}
-            </div>
-            <div className="sheet-div">
-              Career: {bio["Career"]}
-            </div>
-          </div>
-          <div className="bio-row">
-            <div className="sheet-div" style={{flexGrow: 1}}>
-              Career Path: {bio["Career Path"]}
-            </div>
-            <div className="sheet-div">
-              Career Level: {bio["Career Level"]}
-            </div>
-            <div className="sheet-div">
-              Status: {bio["Status"]}
-            </div>
-          </div>
-        </div>
-      </div>
+    <>
+      <Row gutter={[16, 16]}>
+        <Col span={6}>
+          Name: {bio["Name"]}
+        </Col>
+        <Col span={6}>
+          Species: {bio["Species"]}
+        </Col>
+        <Col span={6}>
+          Class: {bio["Class"]}
+        </Col>
+        <Col span={6}>
+          Career: {bio["Career"]}
+        </Col>
+      </Row>
+      <Row gutter={[16, 16]}>
+        <Col span={12}>
+          Career Path: {bio["Career Path"]}
+        </Col>
+        <Col span={6}>
+          Career Level: {bio["Career Level"]}
+        </Col>
+        <Col span={6}>
+          Status: {bio["Status"]}
+        </Col>
+      </Row>
+    </>
   );
 }
 

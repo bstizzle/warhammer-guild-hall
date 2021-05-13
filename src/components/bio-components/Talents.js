@@ -3,6 +3,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
+import { Row, Col } from 'antd';
+
 const Talents = () => {
   const char = useSelector(selectChar)
   const talentKeys = Object.keys(char.talents)
@@ -10,23 +12,25 @@ const Talents = () => {
   let key = 0;
   const talentList = talentKeys.map(t => {
     return(
-      <div key={key++} className="sheet-row">
-        <div key={key++} className="sheet-div" style={{flexGrow: 1}}>
-          {t}
-        </div>
-        <div key={key++} className="sheet-div">
+      <Row key={key++}>
+        <Col key={key++}>
+          {t}:
+        </Col>
+        <Col key={key++}>
           {char.talents[t]}
-        </div>
-      </div>
+        </Col>
+      </Row>
     )
   })
 
   return(
-    <div className="sheet-div" style={{flexGrow: 1}}>
+    <Row>
+      <Col>
       Talents<br/>
       Name - Times Taken
       {talentList}
-    </div>
+      </Col>
+    </Row>
   );
 }
 

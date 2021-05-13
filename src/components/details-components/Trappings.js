@@ -1,27 +1,35 @@
 import React from 'react';
 
+import { Row, Col } from 'antd'
+
 const Trappings = () => {
 
   return(
     <>
-      Trappings<br/>
-      Name - Enc.
-      <div className="sheet-row">
-        <div className="sheet-div" style={{flexGrow: 1}}>
-          Cloak
-        </div>
-        <div className="sheet-div">
-          1
-        </div>
-      </div>
-      <div className="sheet-row">
-        <div className="sheet-div" style={{flexGrow: 1}}>
-          Animal Traps
-        </div>
-        <div className="sheet-div">
-          2
-        </div>
-      </div>
+    <Row>
+      <Col span={12}>
+        Name
+      </Col>
+      <Col span={12}>
+        Enc.
+      </Col>
+    </Row>
+    <Row>
+      <Col span={12}>
+        Cloak
+      </Col>
+      <Col span={12}>
+        1
+      </Col>
+    </Row>
+    <Row>
+      <Col span={12}>
+        Animal Traps
+      </Col>
+      <Col span={12}>
+        2
+      </Col>
+    </Row>
     </>
   );
 }

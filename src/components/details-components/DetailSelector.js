@@ -1,26 +1,22 @@
 import React from 'react';
 
-const DetailSelector = ({ setDetailPage }) => {
+import { Tabs } from 'antd'
+const { TabPane } = Tabs;
 
-  function handleSetDetail(event) {
-    console.log(event.target.innerHTML)
-    setDetailPage(`${event.target.innerHTML}`)
+const DetailSelector = ({ detailPage, setDetailPage }) => {
+
+  function handleSetDetail(key) {
+    setDetailPage(key)
   }
+
   return(
-    <div className="sheet-row">
-      <div className="sheet-div">
-        <button onClick={handleSetDetail}>Trappings</button>
-      </div>
-      <div className="sheet-div">
-        <button onClick={handleSetDetail}>Armor</button>
-      </div>
-      <div className="sheet-div">
-        <button onClick={handleSetDetail}>Weapons</button>
-      </div>
-      <div className="sheet-div">
-        <button onClick={handleSetDetail}>Wounds</button>
-      </div>
-    </div>
+    <Tabs onChange={handleSetDetail} defaultActiveKey={detailPage} mode="horizontal">
+        <TabPane tab="Trappings" key="Trappings">Trappings</TabPane>
+
+        <TabPane tab="Armor" key="Armor">Armor</TabPane>
+
+        <TabPane tab="Weapons" key="Weapons">Weapons</TabPane>
+    </Tabs>
   );
 }
 
