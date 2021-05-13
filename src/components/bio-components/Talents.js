@@ -3,34 +3,44 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
-import { Row, Col } from 'antd';
+import { Table } from 'antd';
 
 const Talents = () => {
   const char = useSelector(selectChar)
   const talentKeys = Object.keys(char.talents)
 
-  let key = 0;
-  const talentList = talentKeys.map(t => {
-    return(
-      <Row key={key++}>
-        <Col key={key++}>
-          {t}:
-        </Col>
-        <Col key={key++}>
-          {char.talents[t]}
-        </Col>
-      </Row>
-    )
+  const columns = [
+    {
+      title: 'Talents',
+      dataIndex: 'name',
+      key: 'name'
+    },
+    {
+      title: 'Times Taken',
+      dataIndex: 'times',
+      key: 'times'
+    },
+    {
+      title: 'Description',
+      dataIndex: 'desc',
+      key: 'desc'
+    }
+  ]
+
+  const data = talentKeys.map(k => {
+    return {
+      name: k,
+      times: char.talents[k]
+    }
   })
 
   return(
-    <Row>
-      <Col>
-      Talents<br/>
-      Name - Times Taken
-      {talentList}
-      </Col>
-    </Row>
+    <Table
+      pagination={false}
+      size="small"
+      columns={columns}
+      dataSource={data}
+    />
   );
 }
 
