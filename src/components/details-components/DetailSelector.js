@@ -11,9 +11,9 @@ const DetailSelector = ({ detailPage, setDetailPage }) => {
 
   return(
     <Tabs onChange={handleSetDetail} defaultActiveKey={detailPage} mode="horizontal">
-        <TabPane tab="Trappings" key="Trappings">Trappings</TabPane>
-        <TabPane tab="Armor" key="Armor">Armor</TabPane>
-        <TabPane tab="Weapons" key="Weapons">Weapons</TabPane>
+        <TabPane tab="Trappings" key="Trappings" />
+        <TabPane tab="Armor" key="Armor" />
+        <TabPane tab="Weapons" key="Weapons" />
     </Tabs>
   );
 }

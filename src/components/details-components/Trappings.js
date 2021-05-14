@@ -1,36 +1,47 @@
 import React from 'react';
 
-import { Row, Col } from 'antd'
+import { Table } from 'antd'
 
 const Trappings = () => {
 
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name'
+    },
+    {
+      title: 'Amount',
+      dataIndex: 'amount',
+      key: 'amount'
+    },
+    {
+      title: 'Enc',
+      dataIndex: 'enc',
+      key: 'enc'
+    }
+  ]
+
+  const data = [
+    {
+      name: 'Cloak',
+      amount: '1',
+      enc: '1',
+    },
+    {
+      name: 'Animal Traps',
+      amount: '2',
+      enc: '2',
+    }
+  ]
+
   return(
-    <>
-    <Row>
-      <Col span={12}>
-        Name
-      </Col>
-      <Col span={12}>
-        Enc.
-      </Col>
-    </Row>
-    <Row>
-      <Col span={12}>
-        Cloak
-      </Col>
-      <Col span={12}>
-        1
-      </Col>
-    </Row>
-    <Row>
-      <Col span={12}>
-        Animal Traps
-      </Col>
-      <Col span={12}>
-        2
-      </Col>
-    </Row>
-    </>
+    <Table 
+      pagination={false}
+      size="small"
+      columns={columns}
+      dataSource={data}
+    />
   );
 }
 

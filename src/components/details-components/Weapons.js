@@ -1,40 +1,45 @@
 import React from 'react';
 
-import { Row, Col } from 'antd'
+import { Table } from 'antd'
 
 const Armor = () => {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name'
+    },
+    {
+      title: 'Enc',
+      dataIndex: 'enc',
+      key: 'enc'
+    },
+    {
+      title: 'Damage',
+      dataIndex: 'damage',
+      key: 'damage'
+    },
+    {
+      title: 'Qualities',
+      dataIndex: 'qualities',
+      key: 'qualities'
+    }
+  ]
+
+  const data = [{
+    name: 'Sword',
+    enc: '1',
+    damage: '5',
+    qualities: 'blank'
+  }]
 
   return(
-    <>
-    <Row>
-      <Col span={8}>
-        Name
-      </Col>
-      <Col span={4}>
-        Enc.
-      </Col>
-      <Col span={4}>
-        Damage
-      </Col>
-      <Col span={8}>
-        Qualities
-      </Col>
-    </Row>
-    <Row>
-      <Col span={8}>
-        Sword
-      </Col>
-      <Col span={4}>
-        1
-      </Col>
-      <Col span={4}>
-        5
-      </Col>
-      <Col span={8}>
-        blank
-      </Col>
-    </Row>
-    </>
+    <Table 
+      pagination={false}
+      size="small"
+      columns={columns}
+      dataSource={data}
+    />
   );
 }
 
