@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import CharacterSheet from './components/CharacterSheet';
 import Banner from './components/Banner';
 import Home from './components/Home';
+import SideBar from './components/SideBar';
 
 import { Layout } from 'antd';
 const { Header, Sider, Content} = Layout;
@@ -11,13 +12,13 @@ function App() {
 
   return (
     <Layout>
-      <Sider>
-          Sider
-      </Sider>
+      <Header>
+        <Banner />
+      </Header>
       <Layout>
-        <Header>
-          <Banner />
-        </Header>
+        <Sider>
+            <SideBar />
+        </Sider>
         <Content>
           <Route exact path='/'>
             <Home />
