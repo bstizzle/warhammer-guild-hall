@@ -19,7 +19,7 @@ const CharacterSheet = () => {
 
   return(
     <>
-    <Row gutter={[16, 16]}>
+    <Row>
       <Col span={16}>
         {char.bio ? <Bio /> : null}
         {char.stats ? <Stats /> : null}
