@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Typography, Popover } from 'antd';
+import { Typography, Popover, Button } from 'antd';
 const { Text } = Typography;
 
 const StatItem = ({stat, char}) => {
@@ -18,15 +18,14 @@ const StatItem = ({stat, char}) => {
     <Popover
       key={stat}
       content={`
-        Initial: ${char.stats[stat].stat}
-        Adv: ${char.stats[stat].adv}
+        Initial: ${char.stats[stat].stat} | Adv: ${char.stats[stat].adv}
       `}
       title={stat}
       trigger="click"
       visible={visible}
       onVisibleChange={handleVisible}
     >
-      <Text key={stat}>{char.stats[stat].stat + char.stats[stat].adv}</Text>
+      <Button size="small" key={stat}>{char.stats[stat].stat + char.stats[stat].adv}</Button>
     </Popover>
   )
 }
