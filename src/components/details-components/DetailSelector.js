@@ -1,24 +1,28 @@
 import React from 'react';
+import Trappings from './Trappings';
+import Armor from './Armor';
+import Weapons from './Weapons';
 
 import { Tabs } from 'antd'
 const { TabPane } = Tabs;
 
-const DetailSelector = ({ detailPage, setDetailPage }) => {
+const DetailSelector = () => {
 
-  function handleSetDetail(key) {
-    setDetailPage(key)
-  }
 
   return(
     <Tabs
-      onChange={handleSetDetail}
-      defaultActiveKey={detailPage}
       mode="horizontal"
       style={{background: '#141414', paddingLeft: '5px'}}  
     >
-        <TabPane tab="Trappings" key="Trappings" />
-        <TabPane tab="Armor" key="Armor" />
-        <TabPane tab="Weapons" key="Weapons" />
+        <TabPane tab="Trappings" key="Trappings">
+          <Trappings />
+        </TabPane>
+        <TabPane tab="Armor" key="Armor">
+          <Armor />
+        </TabPane>
+        <TabPane tab="Weapons" key="Weapons">
+          <Weapons />
+        </TabPane>
     </Tabs>
   );
 }

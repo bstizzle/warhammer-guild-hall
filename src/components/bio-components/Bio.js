@@ -8,17 +8,6 @@ const Bio = () => {
   const char = useSelector(selectChar)
   const bio = char.bio
 
-  //figure out a way to automate two static rows
-  
-  // const bioKeys = Object.keys(bio)
-  // const fullBio = bioKeys.map(b => {
-  //   return(
-  //     <div key={b} className="sheet-div">
-  //       {b}: {bio[b]}
-  //     </div>
-  //   )
-  // })
-
   return(
     <Descriptions
       size="small"
