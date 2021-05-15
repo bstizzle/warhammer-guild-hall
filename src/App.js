@@ -16,10 +16,10 @@ function App() {
         <Banner />
       </Header>
       <Layout>
-        <Sider>
+        <Sider style={{height: '100vh'}}>
             <SideBar />
         </Sider>
-        <Content>
+        <Content style={{ padding: '2%' }}>
           <Route exact path='/'>
             <Home />
           </Route>

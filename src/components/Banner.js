@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Col } from 'antd';
+import { Col, Typography } from 'antd';
+const { Title } = Typography;
 
 const Banner = () => {
 
   return(
     <Col>
-      <h1>WARHAMMER GUILD HALL</h1>
+      <Title>WARHAMMER GUILD HALL</Title>
     </Col>
   );
 }

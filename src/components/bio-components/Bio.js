@@ -21,16 +21,17 @@ const Bio = () => {
 
   return(
     <Descriptions
-      title={bio["Name"]}
       size="small"
       bordered
+      column={{ xxl: 4, xl: 3, lg: 3, md: 2, sm: 1, xs: 1 }}
     >
+      <Descriptions.Item label="Name">{bio["Name"]}</Descriptions.Item>
       <Descriptions.Item label="Species">{bio["Species"]}</Descriptions.Item>
       <Descriptions.Item label="Class">{bio["Class"]}</Descriptions.Item>
       <Descriptions.Item label="Career">{bio["Career"]}</Descriptions.Item>
-      <Descriptions.Item label="Career Path">{bio["Career Path"]}</Descriptions.Item>
       <Descriptions.Item label="Career Level">{bio["Career Level"]}</Descriptions.Item>
       <Descriptions.Item label="Status">{bio["Status"]}</Descriptions.Item>
+      <Descriptions.Item label="Career Path">{bio["Career Path"]}</Descriptions.Item>
     </Descriptions>
   );
 }

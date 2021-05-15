@@ -22,7 +22,9 @@ const Fate = () => {
         column={2}
         size="small"
         layout="vertical"
-        bordered>
+        bordered
+        column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
+      >
         {fate}
       </Descriptions>
     </Col>

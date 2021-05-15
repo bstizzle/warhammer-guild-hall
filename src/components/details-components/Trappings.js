@@ -41,6 +41,7 @@ const Trappings = () => {
       size="small"
       columns={columns}
       dataSource={data}
+      rowKey="name"
     />
   );
 }

@@ -46,6 +46,7 @@ const Armor = () => {
       size="small"
       columns={columns}
       dataSource={data}
+      rowKey="name"
     />
   );
 }

@@ -22,7 +22,8 @@ const CharacterSheet = () => {
   }, [dispatch])
 
   return(
-    <Row>
+    <>
+    <Row gutter={[16, 16]}>
       <Col span={16}>
         {char.bio ? <Bio /> : null}
         {char.stats ? <Stats /> : null}
@@ -41,10 +42,6 @@ const CharacterSheet = () => {
         {detailPage === 'Armor' ? <Armor /> : null}
         {detailPage === 'Weapons' ? <Weapons /> : null}
       </Col>
-
-
-      <Button onClick={()=>history.push("/")}>BACK TO HOME PAGE</Button>
-
       {/*
         Experience
         Movement
@@ -58,7 +55,11 @@ const CharacterSheet = () => {
         Wealth
         Encumberance
       */}
-      </Row>
+    </Row>
+    <Row >
+      <Button onClick={()=>history.push("/")}>BACK TO HOME PAGE</Button>
+    </Row>
+    </>
   );
 }
 

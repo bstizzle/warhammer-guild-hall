@@ -40,6 +40,7 @@ const Talents = () => {
       size="small"
       columns={columns}
       dataSource={data}
+      rowKey="name"
     />
   );
 }

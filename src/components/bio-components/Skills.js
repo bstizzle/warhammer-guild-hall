@@ -87,6 +87,7 @@ const Skills = () => {
           size="small"
           columns={bscColumns}
           dataSource={bscData}
+          rowKey="name"
         />
       </Col>
       <Col span={12}>
@@ -95,6 +96,7 @@ const Skills = () => {
           size="small"
           columns={advColumns} 
           dataSource={advData}
+          rowKey="name"
         />
       </Col>
     </Row>
