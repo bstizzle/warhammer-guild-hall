@@ -4,6 +4,8 @@ import CharacterSheet from './components/CharacterSheet';
 import Banner from './components/Banner';
 import Home from './components/Home';
 import SideBar from './components/SideBar';
+import parchment from './textures/parchment.jpg';
+// import darkParchment from './textures/dark-parchment.jpg';
 
 import { Layout } from 'antd';
 const { Header, Sider, Content} = Layout;
@@ -16,10 +18,10 @@ function App() {
         <Banner />
       </Header>
       <Layout>
-        <Sider style={{height: '100vh'}}>
+        <Sider style={{height: '90vh'}}>
             <SideBar />
         </Sider>
-        <Content style={{ padding: '2%' }}>
+        <Content style={{ height: '90vh', padding: '2%', backgroundImage: `url(${parchment})`, backgroundSize: 'cover' }}>
           <Route exact path='/'>
             <Home />
           </Route>

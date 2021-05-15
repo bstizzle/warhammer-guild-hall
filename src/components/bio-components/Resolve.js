@@ -19,10 +19,10 @@ const Resolve = () => {
   return(
     <Col span={8}>
       <Descriptions
-        column={2}
         size="small"
         layout="vertical"
         bordered
+        style={{background: '#141414'}}
         column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
       >
         {resolve}

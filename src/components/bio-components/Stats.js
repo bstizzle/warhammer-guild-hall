@@ -19,10 +19,10 @@ const Stats = () => {
 
   return(
     <Descriptions
-      column={10}
       size="small"
       layout="vertical"
       bordered
+      style={{background: '#141414'}}
       column={{ xxl: 10, xl: 10, lg: 10, md: 5, sm: 5, xs: 3 }}
     >
       {allStats}

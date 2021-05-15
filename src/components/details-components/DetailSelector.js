@@ -10,7 +10,12 @@ const DetailSelector = ({ detailPage, setDetailPage }) => {
   }
 
   return(
-    <Tabs onChange={handleSetDetail} defaultActiveKey={detailPage} mode="horizontal">
+    <Tabs
+      onChange={handleSetDetail}
+      defaultActiveKey={detailPage}
+      mode="horizontal"
+      style={{background: '#141414', paddingLeft: '5px'}}  
+    >
         <TabPane tab="Trappings" key="Trappings" />
         <TabPane tab="Armor" key="Armor" />
         <TabPane tab="Weapons" key="Weapons" />

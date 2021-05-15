@@ -1,19 +1,13 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
-import { Row, Col, Button } from 'antd';
+import { Col, Typography } from 'antd';
+const { Title } = Typography;
 
 const Home = () => {
-  const history = useHistory();
 
   return(
     <Col>
-      <Row>
-        <h1>HOME PAGE</h1>
-      </Row>
-      <Row>
-        <Button onClick={()=>history.push("./sheet")}>GO TO CHARACTER SHEET</Button>
-      </Row>
+      <Title>HOME PAGE</Title>
     </Col>
   );
 }

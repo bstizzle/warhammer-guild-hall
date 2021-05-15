@@ -44,6 +44,7 @@ const Armor = () => {
     <Table 
       pagination={false}
       size="small"
+      bordered
       columns={columns}
       dataSource={data}
       rowKey="name"

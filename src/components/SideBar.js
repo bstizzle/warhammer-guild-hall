@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Menu } from 'antd';
-const { SubMenu } = Menu;
 
 const Home = () => {
   const history = useHistory();

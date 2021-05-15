@@ -24,6 +24,7 @@ const Bio = () => {
       size="small"
       bordered
       column={{ xxl: 4, xl: 3, lg: 3, md: 2, sm: 1, xs: 1 }}
+      style={{background: '#141414'}}
     >
       <Descriptions.Item label="Name">{bio["Name"]}</Descriptions.Item>
       <Descriptions.Item label="Species">{bio["Species"]}</Descriptions.Item>

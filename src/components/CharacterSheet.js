@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setChar, selectChar } from '../redux/characterSlice';
-import { useHistory } from 'react-router-dom';
-import { Row, Col, Button } from 'antd';
+import { Row, Col } from 'antd';
 
 //component imports
 import { data } from '../fakeDb/fakeData';
@@ -11,7 +10,6 @@ import { Trappings, Armor, Weapons, DetailSelector } from './details-components/
 import { Stats, Skills, Bio, Talents, Fate, Resolve, Wounds } from './bio-components/bioExport';
 
 const CharacterSheet = () => {
-  const history = useHistory();
   const dispatch = useDispatch();
   const char = useSelector(selectChar);
   const [detailPage, setDetailPage] = useState('Trappings')
@@ -55,9 +53,6 @@ const CharacterSheet = () => {
         Wealth
         Encumberance
       */}
-    </Row>
-    <Row >
-      <Button onClick={()=>history.push("/")}>BACK TO HOME PAGE</Button>
     </Row>
     </>
   );

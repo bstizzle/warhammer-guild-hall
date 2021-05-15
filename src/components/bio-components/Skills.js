@@ -85,6 +85,7 @@ const Skills = () => {
         <Table
           pagination={false}
           size="small"
+          bordered
           columns={bscColumns}
           dataSource={bscData}
           rowKey="name"
@@ -94,6 +95,7 @@ const Skills = () => {
         <Table
           pagination={false}
           size="small"
+          bordered
           columns={advColumns} 
           dataSource={advData}
           rowKey="name"
