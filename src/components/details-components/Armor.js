@@ -1,31 +1,54 @@
 import React from 'react';
 
+import { Table } from 'antd';
+
 const Armor = () => {
 
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name'
+    },
+    {
+      title: 'Location',
+      dataIndex: 'location',
+      key: 'location'
+    },
+    {
+      title: 'Enc',
+      dataIndex: 'enc',
+      key: 'enc'
+    },
+    {
+      title: 'AP',
+      dataIndex: 'ap',
+      key: 'ap'
+    },
+    {
+      title: 'Qualities',
+      dataIndex: 'qualities',
+      key: 'qualities'
+    }
+  ]
+
+  const data = [{
+    name: 'Leather Jerkin',
+    location: 'Chest',
+    enc: '1',
+    ap: '1',
+    qualities: 'blank'
+  }]
+
   return(
-    <>
-      Armor<br/>
-      Name - Location - Enc. - AP - Qualities
-      <div className="sheet-row">
-      </div>
-      <div className="sheet-row">
-        <div className="sheet-div" style={{flexGrow: 1}}>
-          Leather Jerkin
-        </div>
-        <div className="sheet-div">
-          Chest
-        </div>
-        <div className="sheet-div">
-          1
-        </div>
-        <div className="sheet-div">
-          1
-        </div>
-        <div className="sheet-div">
-          blank
-        </div>
-      </div>
-    </>
+    <Table 
+      pagination={false}
+      size="small"
+      bordered
+      columns={columns}
+      dataSource={data}
+      rowKey="name"
+    />
   );
 }
 

@@ -3,13 +3,13 @@ import React from 'react';
 import { Col, Typography } from 'antd';
 const { Title } = Typography;
 
-const Home = () => {
+const Banner = () => {
 
   return(
     <Col>
-      <Title>HOME PAGE</Title>
+      <Title>WARHAMMER GUILD HALL</Title>
     </Col>
   );
 }
 
-export default Home;
+export default Banner;

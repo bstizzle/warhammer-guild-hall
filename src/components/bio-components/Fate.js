@@ -3,22 +3,31 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
+import { Col, Descriptions } from 'antd';
+
 const Fate = () => {
   const char = useSelector(selectChar)
   const fateKeys = Object.keys(char.fate);
   const fate = fateKeys.map(f => {
     return(
-      <div key={f} className="sheet-div">
-        {f}: {char.fate[f]}
-      </div>
+      <Descriptions.Item key={f} label={f}>
+        {char.fate[f]}
+      </Descriptions.Item>
     )
   })
 
   return(
-    <div className="sheet-div">
-      Fate<br/>
-      {fate}
-    </div>
+    <Col span={8}>
+      <Descriptions
+        size="small"
+        layout="vertical"
+        bordered
+        style={{background: '#141414'}}
+        column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
+      >
+        {fate}
+      </Descriptions>
+    </Col>
   );
 }
 

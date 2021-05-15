@@ -3,6 +3,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
+import { Row, Col, Table } from 'antd';
+
 const Skills = () => {
   const char = useSelector(selectChar)
   const  bscSkillKeys = Object.keys(char.basicSkills)
@@ -13,58 +15,93 @@ const Skills = () => {
     return skill;
   }
 
-  let key = 0;
-  const bscSkills = bscSkillKeys.map(k => {
-    return(
-      <div key={key++} className="skill-row">
-        <div key={key++} className="name-div">
-          {k}:
-        </div>
-        <div key={key++} className="sheet-div">
-          {char.basicSkills[k].stat}
-        </div>
-        <div key={key++} className="sheet-div">
-          {char.basicSkills[k].adv}
-        </div>
-        <div key={key++} className="sheet-div">
-          {totalSkill(char.basicSkills[k])}
-        </div>
-      </div>
-    );
+  const bscColumns = [
+    {
+      title: 'Basic Skills',
+      dataIndex: 'name',
+      key: 'name'
+    },
+    {
+      title: 'Stat',
+      dataIndex: 'stat',
+      key: 'stat'
+    },
+    {
+      title: 'Adv',
+      dataIndex: 'adv',
+      key: 'adv'
+    },
+    {
+      title: 'Total',
+      dataIndex: 'total',
+      key: 'total'
+    }
+  ]
+
+  const advColumns = [
+    {
+      title: 'Advanced Skills',
+      dataIndex: 'name',
+      key: 'name'
+    },
+    {
+      title: 'Stat',
+      dataIndex: 'stat',
+      key: 'stat'
+    },
+    {
+      title: 'Adv',
+      dataIndex: 'adv',
+      key: 'adv'
+    },
+    {
+      title: 'Total',
+      dataIndex: 'total',
+      key: 'total'
+    }
+  ]
+
+  const bscData = bscSkillKeys.map(k => {
+    return {
+      name: k,
+      stat: char.basicSkills[k].stat,
+      adv: char.basicSkills[k].adv,
+      total: totalSkill(char.basicSkills[k])
+    }
   })
-  const advSkills = advSkillKeys.map(k => {
-    return(
-      <div key={key++} className="skill-row">
-        <div key={key++} className="name-div">
-          {k}:
-        </div>
-        <div key={key++} className="sheet-div">
-          {char.advSkills[k].stat}
-        </div>
-        <div key={key++} className="sheet-div">
-          {char.advSkills[k].adv}
-        </div>
-        <div key={key++} className="sheet-div">
-          {totalSkill(char.advSkills[k])}
-        </div>
-      </div>
-    );
+  const advData = advSkillKeys.map(k => {
+    return {
+      name: k,
+      stat: char.advSkills[k].stat,
+      adv: char.advSkills[k].adv,
+      total: totalSkill(char.advSkills[k])
+    }
   })
 
   // Refactor out into individual Skill components
   return(
-    <>
-      <div className="sheet-div">
-        Basic Skills<br/>
-        Name - Stat - Adv - Total
-        {bscSkills}
-      </div>
-      <div className="sheet-div">
-        Advanced Skills<br/>
-        Name - Stat - Adv - Total
-        {advSkills}
-      </div>
-    </>
+    <Row>
+      <Col span={12}>
+        <Table
+          pagination={false}
+          size="small"
+          bordered
+          columns={bscColumns}
+          dataSource={bscData}
+          rowKey="name"
+        />
+      </Col>
+      <Col span={12}>
+        <Table
+          pagination={false}
+          size="small"
+          bordered
+          columns={advColumns} 
+          dataSource={advData}
+          rowKey="name"
+        />
+      </Col>
+    </Row>
   );
 }
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
+import { Descriptions } from 'antd'
+
 const Bio = () => {
   const char = useSelector(selectChar)
   const bio = char.bio
@@ -18,35 +20,20 @@ const Bio = () => {
   // })
 
   return(
-      <div className="sheet-div">
-        <div className="bio-column">
-          <div className="bio-row">
-            <div className="sheet-div">
-              Name: {bio["Name"]}
-            </div>
-            <div className="sheet-div">
-              Species: {bio["Species"]}
-            </div>
-            <div className="sheet-div">
-              Class: {bio["Class"]}
-            </div>
-            <div className="sheet-div">
-              Career: {bio["Career"]}
-            </div>
-          </div>
-          <div className="bio-row">
-            <div className="sheet-div" style={{flexGrow: 1}}>
-              Career Path: {bio["Career Path"]}
-            </div>
-            <div className="sheet-div">
-              Career Level: {bio["Career Level"]}
-            </div>
-            <div className="sheet-div">
-              Status: {bio["Status"]}
-            </div>
-          </div>
-        </div>
-      </div>
+    <Descriptions
+      size="small"
+      bordered
+      column={{ xxl: 4, xl: 3, lg: 3, md: 2, sm: 1, xs: 1 }}
+      style={{background: '#141414'}}
+    >
+      <Descriptions.Item label="Name">{bio["Name"]}</Descriptions.Item>
+      <Descriptions.Item label="Species">{bio["Species"]}</Descriptions.Item>
+      <Descriptions.Item label="Class">{bio["Class"]}</Descriptions.Item>
+      <Descriptions.Item label="Career">{bio["Career"]}</Descriptions.Item>
+      <Descriptions.Item label="Career Level">{bio["Career Level"]}</Descriptions.Item>
+      <Descriptions.Item label="Status">{bio["Status"]}</Descriptions.Item>
+      <Descriptions.Item label="Career Path">{bio["Career Path"]}</Descriptions.Item>
+    </Descriptions>
   );
 }
 
