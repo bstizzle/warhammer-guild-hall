@@ -11,7 +11,7 @@ const Skills = () => {
   const  advSkillKeys = Object.keys(char.advSkills)
 
   function totalSkill({stat, adv}) {
-    const skill = char.stats[stat] + adv;
+    const skill = char.stats[stat].stat + adv;
     return skill;
   }
 

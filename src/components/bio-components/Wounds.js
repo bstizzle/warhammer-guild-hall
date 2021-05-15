@@ -7,7 +7,7 @@ import { Col, Descriptions } from 'antd';
 const Wounds = () => {
   const char = useSelector(selectChar)
 
-  const totalWounds = (char.stats["S"] + char.stats["T"]*2 + char.stats["WP"])/10
+  const totalWounds = (char.stats["S"].stat + char.stats["T"].stat*2 + char.stats["WP"].stat)/10
 
   return(
     <Col span={8}>

@@ -9,16 +9,46 @@ export const data = {
     "Status": "Silver 5"
   },
   stats: {
-    "WS": 10,
-    "BS": 20,
-    "S": 30,
-    "T": 40,
-    "I": 50,
-    "Ag": 60,
-    "Dex": 70,
-    "Int": 80,
-    "WP": 90,
-    "Fel": 100
+    "WS": {
+      stat: 10,
+      adv: 0
+    },
+    "BS": {
+      stat: 20,
+      adv: 0
+    },
+    "S": {
+      stat: 30,
+      adv: 5
+    },
+    "T": {
+      stat: 40,
+      adv: 0
+    },
+    "I": {
+      stat: 50,
+      adv: 10
+    },
+    "Ag": {
+      stat: 60,
+      adv: 5
+    },
+    "Dex": {
+      stat: 70,
+      adv: 0
+    },
+    "Int": {
+      stat: 80,
+      adv: 0
+    },
+    "WP": {
+      stat: 90,
+      adv: 0
+    },
+    "Fel": {
+      stat: 99,
+      adv: 0
+    }
   },
   basicSkills: {
     "Melee (Basic)": {
