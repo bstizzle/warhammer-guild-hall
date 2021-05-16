@@ -2952,6 +2952,18 @@
     "apollo-server-caching" "^0.7.0"
     "apollo-server-env" "^3.1.0"
 
+"apollo-server@^2.24.0":
+  "integrity" "sha512-KYYyBRLvqJaXFk64HfdgPilm8bqc2ON3hwhWmWx2Apsy4PC7paVK4gYFAUh9piPpeVZfF3t7zm+2J+9R47otjA=="
+  "resolved" "https://registry.npmjs.org/apollo-server/-/apollo-server-2.24.0.tgz"
+  "version" "2.24.0"
+  dependencies:
+    "apollo-server-core" "^2.24.0"
+    "apollo-server-express" "^2.24.0"
+    "express" "^4.0.0"
+    "graphql-subscriptions" "^1.0.0"
+    "graphql-tools" "^4.0.8"
+    "stoppable" "^1.1.0"
+
 "apollo-tracing@^0.14.0":
   "integrity" "sha512-KH4mOoicZ2CQkEYVuNP9avJth59LwNqku3fKZ4S0UYE1RfxzIoLLsEyuY8MuJEgNdtKKfkX5G5Kn5Rp4LCJ4RQ=="
   "resolved" "https://registry.npmjs.org/apollo-tracing/-/apollo-tracing-0.14.0.tgz"
@@ -5625,7 +5637,7 @@
     "jest-message-util" "^26.6.2"
     "jest-regex-util" "^26.0.0"
 
-"express@^4.17.1":
+"express@^4.0.0", "express@^4.17.1":
   "integrity" "sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g=="
   "resolved" "https://registry.npmjs.org/express/-/express-4.17.1.tgz"
   "version" "4.17.1"
@@ -11734,6 +11746,11 @@
   "integrity" "sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks="
   "resolved" "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.1.tgz"
   "version" "1.1.1"
+
+"stoppable@^1.1.0":
+  "integrity" "sha512-KXDYZ9dszj6bzvnEMRYvxgeTHU74QBFL54XKtP3nyMuJ81CFYtABZ3bAzL2EdFUaEwJOBOgENyFj3R7oTzDyyw=="
+  "resolved" "https://registry.npmjs.org/stoppable/-/stoppable-1.1.0.tgz"
+  "version" "1.1.0"
 
 "stream-browserify@^2.0.1":
   "integrity" "sha512-nX6hmklHs/gr2FuxYDltq8fJA1GDlxKQCz8O/IM4atRqBH8OORmBNgfvW5gG10GT/qQ9u0CzIvr2X5Pkt6ntqg=="
