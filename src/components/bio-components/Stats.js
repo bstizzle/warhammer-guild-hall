@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 import StatItem from './StatItem';
@@ -13,7 +12,7 @@ const Stats = () => {
   const allStats = statKeys.map(s => {
     return(
       <Descriptions.Item key={s} label={s}>
-        <StatItem key={s} stat={s} char={char}/>
+        <StatItem key={s} s={s} char={char}/>
       </Descriptions.Item>
     )
   })

@@ -9,13 +9,13 @@ const Bio = () => {
   const char = useSelector(selectChar)
   const bio = char.bio
   //controlled form state
-  const [nameStr, setNameStr] = useState(bio["Name"])
-  const [specStr, setSpecStr] = useState(bio["Species"])
-  const [classStr, setClassStr] = useState(bio["Class"])
-  const [carStr, setCarStr] = useState(bio["Career"])
-  const [carLvlStr, setCarLvlStr] = useState(bio["Career Level"])
-  const [statusStr, setStatusStr] = useState(bio["Status"])
-  const [carPathStr, setCarPathStr] = useState(bio["Career Path"])
+  const [nameStr, setNameStr] = useState(bio.name)
+  const [specStr, setSpecStr] = useState(bio.species)
+  const [classStr, setClassStr] = useState(bio.class)
+  const [carStr, setCarStr] = useState(bio.career)
+  const [carLvlStr, setCarLvlStr] = useState(bio.careerLevel)
+  const [statusStr, setStatusStr] = useState(bio.status)
+  const [carPathStr, setCarPathStr] = useState(bio.careerPath)
 
   return(
     <Descriptions

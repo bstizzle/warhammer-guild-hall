@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-import { Typography, Popover, Button } from 'antd';
-const { Text } = Typography;
+import { Popover, Button } from 'antd';
 
-const StatItem = ({stat, char}) => {
+const StatItem = ({s, char}) => {
   const [visible, setVisible] = useState(false)
   
   function handleVisible(){
@@ -16,16 +15,16 @@ const StatItem = ({stat, char}) => {
 
   return(
     <Popover
-      key={stat}
+      key={s}
       content={`
-        Initial: ${char.stats[stat].stat} | Adv: ${char.stats[stat].adv}
+        Initial: ${char.stats[s].stat} | Adv: ${char.stats[s].adv}
       `}
-      title={stat}
+      title={s}
       trigger="click"
       visible={visible}
       onVisibleChange={handleVisible}
     >
-      <Button size="small" key={stat}>{char.stats[stat].stat + char.stats[stat].adv}</Button>
+      <Button size="small" key={s}>{char.stats[s].stat + char.stats[s].adv}</Button>
     </Popover>
   )
 }

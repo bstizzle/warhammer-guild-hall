@@ -1,51 +1,51 @@
 export const data = {
   bio: {
-    "Name": "Strathot",
-    "Species": "Wood Elf",
-    "Class": "Warrior",
-    "Career": "Knight",
-    "Career Level": "Knight",
-    "Career Path": "Trapper, Hunter*, Knight",
-    "Status": "Silver 5"
+    name: "Strathot",
+    species: "Wood Elf",
+    class: "Warrior",
+    career: "Knight",
+    careerLevel: "Knight",
+    careerPath: "Trapper, Hunter*, Knight",
+    status: "Silver 5"
   },
   stats: {
-    "WS": {
+    WS: {
       stat: 10,
       adv: 0
     },
-    "BS": {
+    BS: {
       stat: 20,
       adv: 0
     },
-    "S": {
+    S: {
       stat: 30,
       adv: 5
     },
-    "T": {
+    T: {
       stat: 40,
       adv: 0
     },
-    "I": {
+    I: {
       stat: 50,
       adv: 10
     },
-    "Ag": {
+    Ag: {
       stat: 60,
       adv: 5
     },
-    "Dex": {
+    Dex: {
       stat: 70,
       adv: 0
     },
-    "Int": {
+    Int: {
       stat: 80,
       adv: 0
     },
-    "WP": {
+    WP: {
       stat: 90,
       adv: 0
     },
-    "Fel": {
+    Fel: {
       stat: 99,
       adv: 0
     }
@@ -83,3 +83,5 @@ export const data = {
     "Resilience": 3
   }
 }
+
+// module.exports = data;
