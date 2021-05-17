@@ -8,10 +8,10 @@ import { Col, Descriptions } from 'antd';
 const Resolve = () => {
   const char = useSelector(selectChar)
   const resolveKeys = Object.keys(char.resolve);
-  const resolve = resolveKeys.map(f => {
+  const resolve = resolveKeys.map(r => {
     return(
-      <Descriptions.Item key={f} label={f}>
-        {char.resolve[f]}
+      <Descriptions.Item key={r} label={r.charAt(0).toUpperCase() + r.slice(1)}>
+        {char.resolve[r]}
       </Descriptions.Item>
     )
   })

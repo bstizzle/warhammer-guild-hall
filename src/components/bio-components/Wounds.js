@@ -18,7 +18,7 @@ const Wounds = () => {
         style={{background: '#141414'}}
         column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
       >
-        <Descriptions.Item label="Wounds">{totalWounds}</Descriptions.Item>
+        <Descriptions.Item label="Wounds">{char.currentWounds} / {totalWounds}</Descriptions.Item>
         <Descriptions.Item label="+">-</Descriptions.Item>
       </Descriptions>
     </Col>

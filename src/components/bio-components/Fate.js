@@ -10,7 +10,7 @@ const Fate = () => {
   const fateKeys = Object.keys(char.fate);
   const fate = fateKeys.map(f => {
     return(
-      <Descriptions.Item key={f} label={f}>
+      <Descriptions.Item key={f} label={f.charAt(0).toUpperCase() + f.slice(1)}>
         {char.fate[f]}
       </Descriptions.Item>
     )

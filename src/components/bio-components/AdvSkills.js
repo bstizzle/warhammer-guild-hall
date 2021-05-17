@@ -1,42 +1,19 @@
 import React from 'react';
+import Talents from './Talents';
 
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';
 
 import { Row, Col, Table } from 'antd';
 
-const Skills = () => {
+const BscSkills = () => {
   const char = useSelector(selectChar)
-  const  bscSkillKeys = Object.keys(char.basicSkills)
   const  advSkillKeys = Object.keys(char.advSkills)
 
   function totalSkill({stat, adv}) {
     const skill = char.stats[stat].stat + adv;
     return skill;
   }
-
-  const bscColumns = [
-    {
-      title: 'Basic Skills',
-      dataIndex: 'name',
-      key: 'name'
-    },
-    {
-      title: 'Stat',
-      dataIndex: 'stat',
-      key: 'stat'
-    },
-    {
-      title: 'Adv',
-      dataIndex: 'adv',
-      key: 'adv'
-    },
-    {
-      title: 'Total',
-      dataIndex: 'total',
-      key: 'total'
-    }
-  ]
 
   const advColumns = [
     {
@@ -61,21 +38,35 @@ const Skills = () => {
     }
   ]
 
-  const bscData = bscSkillKeys.map(k => {
-    return {
-      name: k,
-      stat: char.basicSkills[k].stat,
-      adv: char.basicSkills[k].adv,
-      total: totalSkill(char.basicSkills[k])
+  let i = 0
+  const advData1 = []
+  const advData2 = []
+  // const advData = advSkillKeys.map(k => {
+  //   return {
+  //     name: k,
+  //     stat: char.advSkills[k].stat,
+  //     adv: char.advSkills[k].adv,
+  //     total: totalSkill(char.advSkills[k])
+  //   }
+  // })
+
+  advSkillKeys.forEach(k => {
+    if(i < 13){
+      advData1.push({
+        name: k,
+        stat: char.advSkills[k].stat,
+        adv: char.advSkills[k].adv,
+        total: totalSkill(char.advSkills[k])
+      })
+    } else {
+      advData2.push({
+        name: k,
+        stat: char.advSkills[k].stat,
+        adv: char.advSkills[k].adv,
+        total: totalSkill(char.advSkills[k])
+      })
     }
-  })
-  const advData = advSkillKeys.map(k => {
-    return {
-      name: k,
-      stat: char.advSkills[k].stat,
-      adv: char.advSkills[k].adv,
-      total: totalSkill(char.advSkills[k])
-    }
+    i++;
   })
 
   // Refactor out into individual Skill components
@@ -86,18 +77,18 @@ const Skills = () => {
           pagination={false}
           size="small"
           bordered
-          columns={bscColumns}
-          dataSource={bscData}
+          columns={advColumns} 
+          dataSource={advData1}
           rowKey="name"
         />
       </Col>
       <Col span={12}>
-        <Table
+      <Table
           pagination={false}
           size="small"
           bordered
           columns={advColumns} 
-          dataSource={advData}
+          dataSource={advData2}
           rowKey="name"
         />
       </Col>
@@ -105,4 +96,4 @@ const Skills = () => {
   );
 }
 
-export default Skills;
+export default BscSkills;

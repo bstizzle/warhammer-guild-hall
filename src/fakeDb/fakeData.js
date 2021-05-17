@@ -51,14 +51,110 @@ export const data = {
     }
   },
   basicSkills: {
+    "Art ()": {
+      stat: "Dex",
+      adv: 5
+    },
+    "Athletics": {
+      stat: "Ag",
+      adv: 0
+    },
+    "Bribery": {
+      stat: "Fel",
+      adv: 0
+    },
+    "Charm": {
+      stat: "Fel",
+      adv: 0
+    },
+    "Charm Animal": {
+      stat: "WP",
+      adv: 0
+    },
+    "Climb": {
+      stat: "S",
+      adv: 0
+    },
+    "Cool": {
+      stat: "WP",
+      adv: 0
+    },
+    "Consume Alcohol": {
+      stat: "T",
+      adv: 0
+    },
+    "Dodge": {
+      stat: "Ag",
+      adv: 0
+    },
+    "Drive": {
+      stat: "Ag",
+      adv: 0
+    },
+    "Endurance": {
+      stat: "T",
+      adv: 0
+    },
+    "Entertain ()": {
+      stat: "Fel",
+      adv: 0
+    },
+    "Gamble": {
+      stat: "Int",
+      adv: 0
+    },
+    "Gossip": {
+      stat: "Fel",
+      adv: 0
+    },
+    "Haggle": {
+      stat: "Fel",
+      adv: 0
+    },
+    "Intimidate": {
+      stat: "S",
+      adv: 0
+    },
+    "Intuition": {
+      stat: "I",
+      adv: 0
+    },
+    "Leadership": {
+      stat: "Fel",
+      adv: 0
+    },
     "Melee (Basic)": {
       stat: "WS",
       adv: 10
     },
-    "Art": {
-      stat: "Dex",
-      adv: 5
-    }
+    "Melee ()": {
+      stat: "WS",
+      adv: 0
+    },
+    "Navigation": {
+      stat: "I",
+      adv: 0
+    },
+    "Outdoor Survival": {
+      stat: "Int",
+      adv: 0
+    },
+    "Perception": {
+      stat: "I",
+      adv: 0
+    },
+    "Ride ()": {
+      stat: "Ag",
+      adv: 0
+    },
+    "Row": {
+      stat: "S",
+      adv: 0
+    },
+    "Stealth ()": {
+      stat: "Ag",
+      adv: 0
+    },
   },
   advSkills: {
     "Melee (Polearm)": {
@@ -75,13 +171,14 @@ export const data = {
     "Sturdy": 3
   },
   fate: {
-    "Fate": 2,
-    "Fortune": 2
+    fate: 2,
+    fortune: 2
   },
   resolve: {
-    "Resolve": 3,
-    "Resilience": 3
-  }
+    resolve: 3,
+    resilience: 3
+  },
+  currentWounds: 18
 }
 
 // module.exports = data;

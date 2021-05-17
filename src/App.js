@@ -18,10 +18,10 @@ function App() {
         <Banner />
       </Header>
       <Layout>
-        <Sider style={{height: '90vh'}}>
+        <Sider>
             <SideBar />
         </Sider>
-        <Content style={{ height: '90vh', padding: '1%', backgroundImage: `url(${parchment})`, backgroundSize: 'cover' }}>
+        <Content style={{height: '90vh', padding: '1%', backgroundImage: `url(${parchment})`, backgroundSize: 'cover'}}>
           <Route exact path='/'>
             <Home />
           </Route>

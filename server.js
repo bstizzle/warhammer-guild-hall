@@ -12,7 +12,7 @@ const typeDefs = gql`
 
   type Character {
     bio: Bio
-    # stats: [Stat]
+    stats: Stats
     # basicSkills: [BasicSkill]
     # advSkills: [AdvSkill]
     # talents: [Talent]
@@ -22,6 +22,34 @@ const typeDefs = gql`
 
   type Bio {
     name: String
+    species: String
+    class: String
+    career: String
+    careerLevel: String
+    careerPath: String
+    status: String
+  }
+
+  type Stats {
+    WS: Stat
+    BS: Stat
+    S: Stat
+    T: Stat
+    I: Stat
+    Ag: Stat
+    Dex: Stat
+    Int: Stat
+    WP: Stat
+    Fel: Stat
+  }
+
+  type Fate {
+    
+  }
+
+  type Stat {
+    stat: Int
+    adv: Int
   }
 
   # The "Query" type is special: it lists all of the available queries that
