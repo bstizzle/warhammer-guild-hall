@@ -1,6 +1,7 @@
 import React from 'react';
 import BscSkills from './BscSkills';
 import AdvSkills from './AdvSkills';
+import Talents from './Talents';
 
 import { Tabs } from 'antd'
 const { TabPane } = Tabs;
@@ -19,6 +20,9 @@ const SkillsSelector = () => {
         </TabPane>
         <TabPane tab="Advanced Skills" key="Advanced Skills">
           <AdvSkills />
+        </TabPane>
+        <TabPane tab="Talents" key="Talents">
+          <Talents />
         </TabPane>
     </Tabs>
   );

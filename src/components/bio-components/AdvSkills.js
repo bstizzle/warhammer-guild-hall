@@ -1,5 +1,4 @@
 import React from 'react';
-import Talents from './Talents';
 
 import { useSelector } from 'react-redux';
 import { selectChar } from '../../redux/characterSlice';

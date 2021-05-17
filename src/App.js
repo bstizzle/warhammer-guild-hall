@@ -8,12 +8,12 @@ import parchment from './textures/parchment.jpg';
 // import darkParchment from './textures/dark-parchment.jpg';
 
 import { Layout } from 'antd';
-const { Header, Sider, Content} = Layout;
+const { Header, Sider, Footer, Content} = Layout;
 
 function App() {
 
   return (
-    <Layout>
+    <Layout style={{minHeight: '100vh'}}>
       <Header>
         <Banner />
       </Header>
@@ -21,7 +21,7 @@ function App() {
         <Sider>
             <SideBar />
         </Sider>
-        <Content style={{height: '90vh', padding: '1%', backgroundImage: `url(${parchment})`, backgroundSize: 'cover'}}>
+        <Content style={{padding: '1%', backgroundImage: `url(${parchment})`, backgroundSize: 'cover'}}>
           <Route exact path='/'>
             <Home />
           </Route>
@@ -30,6 +30,9 @@ function App() {
           </Route>
         </Content>
       </Layout>
+      <Footer>
+        Footer
+      </Footer>
     </Layout>
   );
 }

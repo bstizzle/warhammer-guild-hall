@@ -13,7 +13,7 @@ const DetailSelector = () => {
     <Tabs
       mode="horizontal"
       centered
-      style={{background: '#141414', paddingLeft: '3px', paddingRight: '3px'}}  
+      style={{background: '#141414', paddingLeft: '3px', paddingRight: '3px', height: '100%'}}  
     >
         <TabPane tab="Trappings" key="Trappings">
           <Trappings />
