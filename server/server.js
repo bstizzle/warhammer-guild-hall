@@ -8,7 +8,7 @@ const server = new ApolloServer({ typeDefs, resolvers })
 const app = express();
 server.applyMiddleware({ app });
 
-mongoose.connect('mongodb+srv://ben:pizz4lionsupr3m3@cluster0.tgqa8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
