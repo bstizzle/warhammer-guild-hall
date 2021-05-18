@@ -1,4 +1,4 @@
-export const data = {
+const data = {
   bio: {
     name: "Strathot",
     species: "Wood Elf",
@@ -181,4 +181,4 @@ export const data = {
   currentWounds: 18
 }
 
-// module.exports = data;
+module.exports = data;
