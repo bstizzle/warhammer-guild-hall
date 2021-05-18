@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const BioSchema = new Schema({
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    // required: true
-  },
   name: {
     type: String
   },
@@ -73,6 +68,11 @@ const StatsSchema = new Schema({
 })
 
 const CharacterSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
   bio: {
     type: BioSchema
   },

@@ -1,5 +1,5 @@
 const data = require('../src/fakeDb/fakeData');
-const { Character } = require('./models');
+const { Character, User } = require('./models');
 
 const resolvers = {
   Query: {
@@ -18,11 +18,26 @@ const resolvers = {
   },
   Mutation: {
     addCharacter (parent, args, context, info) {
-      const { bio } = args
+      const { userId, bio } = args
       const charObj = new Character({
+        userId,
         bio
       })
       return charObj.save()
+        .then(result => {
+          return { ...result._doc}
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
+    addUser (parent, args, context, info) {
+      const { name, email } = args
+      const userObj = new User({
+        name,
+        email
+      })
+      return userObj.save()
         .then(result => {
           return { ...result._doc}
         })
