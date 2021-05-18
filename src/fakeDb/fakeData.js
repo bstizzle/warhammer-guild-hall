@@ -1,4 +1,5 @@
 const data = {
+  userId: 1,
   bio: {
     name: "Strathot",
     species: "Wood Elf",
