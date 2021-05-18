@@ -3,7 +3,6 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
 
   type Bio {
-    _id: String
     name: String
     species: String
     class: String
@@ -14,13 +13,11 @@ const typeDefs = gql`
   }
 
   type Stat {
-    _id: String
     stat: Int
     adv: Int
   }
 
   type Stats {
-    _id: String
     WS: Stat
     BS: Stat
     S: Stat
@@ -35,7 +32,7 @@ const typeDefs = gql`
 
   type Character {
     _id: String
-    userId: String
+    userId: String  
     bio: Bio
     stats: Stats
     # basicSkills: [BasicSkill]
@@ -68,8 +65,31 @@ const typeDefs = gql`
     status: String
   }
 
+  input StatInput {
+    stat: Int
+    adv: Int
+  }
+
+  input StatsInput {
+    WS: StatInput
+    BS: StatInput
+    S: StatInput
+    T: StatInput
+    I: StatInput
+    Ag: StatInput
+    Dex: StatInput
+    Int: StatInput
+    WP: StatInput
+    Fel: StatInput
+  }
+
   type Mutation {
-    addCharacter(userId: String, bio: BioInput): Character
+    addCharacter(
+      userId: String
+      bio: BioInput
+      stats: StatsInput
+    ): Character
+
     addUser(name: String, email: String): User
   }
 `;

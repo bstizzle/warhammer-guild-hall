@@ -18,10 +18,11 @@ const resolvers = {
   },
   Mutation: {
     addCharacter (parent, args, context, info) {
-      const { userId, bio } = args
+      const { userId, bio, stats } = args
       const charObj = new Character({
         userId,
-        bio
+        bio,
+        stats
       })
       return charObj.save()
         .then(result => {

@@ -9,8 +9,7 @@ const server = new ApolloServer({ typeDefs, resolvers })
 const app = express();
 server.applyMiddleware({ app });
 
-mongoose.connect(config.DB_URI,
-  {
+mongoose.connect(config.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
