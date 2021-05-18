@@ -12,7 +12,7 @@ import parchment from './textures/parchment.jpg';
 import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
-const GET_USERS = gql`
+const GET_CHARACTERS = gql`
   {
     characters {
       bio {
@@ -23,9 +23,10 @@ const GET_USERS = gql`
 `
 
 function App() {
-  const { loading, error, data } = useQuery(GET_USERS)
+  const { loading, error, data } = useQuery(GET_CHARACTERS)
   if (error) return <h1>Something went wrong!</h1>
   if (loading) return <h1>Loading...</h1>
+  console.log(data)
 
   return (
     <Layout style={{minHeight: '100vh'}}>
@@ -46,7 +47,7 @@ function App() {
         </Content>
       </Layout>
       <Footer>
-        {data}
+        {data[0]}
       </Footer>
     </Layout>
   );

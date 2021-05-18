@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   userId: 1,
   bio: {
     name: "Strathot",
@@ -182,4 +182,4 @@ const data = {
   currentWounds: 18
 }
 
-module.exports = data;
+// module.exports = data;
