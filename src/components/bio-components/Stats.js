@@ -1,18 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectChar } from '../../redux/characterSlice';
+// import { useSelector } from 'react-redux';
+// import { selectChar } from '../../redux/characterSlice';
 import StatItem from './StatItem';
 
 import { Descriptions } from 'antd';
 
-const Stats = () => {
-  const char = useSelector(selectChar)
-  const statKeys = Object.keys(char.stats)
+const Stats = ({ stats }) => {
+  // const char = useSelector(selectChar)
+  const statKeys = Object.keys(stats)
 
   const allStats = statKeys.map(s => {
     return(
       <Descriptions.Item key={s} label={s}>
-        <StatItem key={s} s={s} char={char}/>
+        <StatItem key={s} s={s} stats={stats}/>
       </Descriptions.Item>
     )
   })

@@ -106,8 +106,8 @@ const CharacterSheet = () => {
   } else if(loading) {
     return <h1>Loading...</h1>
   } else {
-    if(char !== data){
-      setChar(data)
+    if(char !== data.character){
+      setChar(data.character)
     }
     console.log(char)
 
@@ -125,12 +125,12 @@ const CharacterSheet = () => {
       <>
       {hasError === false ? <Row>
         <Col span={16}>
-          {char ? <Bio /> : null}
-          {char ? <Stats /> : null}
+          {char ? <Bio bio={char.bio} /> : null}
+          {char ? <Stats stats={char.stats} /> : null}
           <Row>
-            {char ? <Fate /> : null}
-            {char ? <Resolve /> : null}
-            {char ? <Wounds /> : null}
+            {char ? <Fate fate={char.fate} /> : null}
+            {char ? <Resolve resolve={char.resolve} /> : null}
+            {char ? <Wounds stats={char.stats} currentWounds={char.currentWounds} /> : null}
           </Row>
           {/* {char.bio ? <SkillsSelector /> : null} */}
         </Col>

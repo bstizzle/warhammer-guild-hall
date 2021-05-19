@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { selectChar } from '../../redux/characterSlice';
+// import { useSelector } from 'react-redux';
+// import { selectChar } from '../../redux/characterSlice';
 
 import { Descriptions, Typography } from 'antd'
 const { Text } = Typography
 
-const Bio = () => {
-  const char = useSelector(selectChar)
-  const bio = char.bio
+const Bio = ({ bio }) => {
+  // const char = useSelector(selectChar)
+  // const bio = char.bio
   //controlled form state
+  console.log(bio)
   const [nameStr, setNameStr] = useState(bio.name)
   const [specStr, setSpecStr] = useState(bio.species)
   const [classStr, setClassStr] = useState(bio.class)
