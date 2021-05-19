@@ -1,12 +1,8 @@
 import React from 'react';
-
-import { useSelector } from 'react-redux';
-import { selectChar } from '../../redux/characterSlice';
-
 import { Row, Col, Table } from 'antd';
 
 const BscSkills = () => {
-  const char = useSelector(selectChar)
+  let char;
   const  advSkillKeys = Object.keys(char.advSkills)
 
   function totalSkill({stat, adv}) {

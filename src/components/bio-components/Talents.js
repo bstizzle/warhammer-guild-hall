@@ -1,12 +1,8 @@
 import React from 'react';
-
-import { useSelector } from 'react-redux';
-import { selectChar } from '../../redux/characterSlice';
-
 import { Table } from 'antd';
 
 const Talents = () => {
-  const char = useSelector(selectChar)
+  let char;
   const talentKeys = Object.keys(char.talents)
 
   const columns = [

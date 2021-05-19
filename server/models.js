@@ -67,6 +67,21 @@ const StatsSchema = new Schema({
   },
 })
 
+const BasicSkillSchema = new Schema({
+  name: {
+    type: String
+  },
+  desc: {
+    type: String
+  },
+  stat: {
+    type: String
+  },
+  adv: {
+    type: Number
+  }
+})
+
 const TalentSchema = new Schema({
   name: {
     type: String
@@ -105,6 +120,9 @@ const CharacterSchema = new Schema({
   },
   stats: {
     type: StatsSchema
+  },
+  basicSkills: {
+    type: [BasicSkillSchema]
   },
   talents: {
     type: [TalentSchema]

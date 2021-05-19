@@ -30,6 +30,13 @@ const typeDefs = gql`
     Fel: Stat
   }
 
+  type BasicSkill {
+    name: String
+    desc: String
+    stat: String
+    adv: Int
+  }
+
   type Fate {
     fate: Int
     fortune: Int
@@ -50,7 +57,7 @@ const typeDefs = gql`
     userId: String  
     bio: Bio
     stats: Stats
-    # basicSkills: [BasicSkill]
+    basicSkills: [BasicSkill]
     # advSkills: [AdvSkill]
     talents: [Talent]
     fate: Fate
@@ -99,6 +106,13 @@ const typeDefs = gql`
     Fel: StatInput
   }
 
+  input BasicSkillInput {
+    name: String
+    desc: String
+    stat: String
+    adv: Int
+  }
+
   input FateInput {
     fate: Int
     fortune: Int
@@ -119,7 +133,7 @@ const typeDefs = gql`
       userId: String
       bio: BioInput
       stats: StatsInput
-      # bsc
+      basicSkills: [BasicSkillInput]
       # adv
       talents: [TalentInput]
       fate: FateInput

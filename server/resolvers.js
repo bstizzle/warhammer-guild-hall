@@ -41,11 +41,12 @@ const resolvers = {
   },
   Mutation: {
     addCharacter (parent, args, context, info) {
-      const { userId, bio, stats, talents, fate, resolve, currentWounds } = args
+      const { userId, bio, stats, basicSkills, talents, fate, resolve, currentWounds } = args
       const charObj = new Character({
         userId,
         bio,
         stats,
+        basicSkills,
         talents,
         fate,
         resolve,

@@ -1,16 +1,9 @@
 import React from 'react';
-
-import { useSelector } from 'react-redux';
-import { selectChar } from '../../redux/characterSlice';
-
 import { Row, Col, Table } from 'antd';
 
-const BscSkills = () => {
-  const char = useSelector(selectChar)
-  const  bscSkillKeys = Object.keys(char.basicSkills)
-
-  function totalSkill({stat, adv}) {
-    const skill = char.stats[stat].stat + adv;
+const BscSkills = ({ basicSkills, stats }) => {
+  function totalSkill(stat, adv) {
+    const skill = stats[stat].stat + adv;
     return skill;
   }
 
@@ -41,20 +34,20 @@ const BscSkills = () => {
   let i = 0
   const bscData1 = []
   const bscData2 = []
-  bscSkillKeys.forEach(k => {
+  basicSkills.forEach(k => {
     if(i < 13){ 
       bscData1.push({
-        name: k,
-        stat: char.basicSkills[k].stat,
-        adv: char.basicSkills[k].adv,
-        total: totalSkill(char.basicSkills[k])
+        name: k.name,
+        stat: k.stat,
+        adv: k.adv,
+        total: totalSkill(k.stat, k.adv)
       })
     } else {
       bscData2.push({
-        name: k,
-        stat: char.basicSkills[k].stat,
-        adv: char.basicSkills[k].adv,
-        total: totalSkill(char.basicSkills[k])
+        name: k.name,
+        stat: k.stat,
+        adv: k.adv,
+        total: totalSkill(k.stat, k.adv)
       })
     }
     i++;

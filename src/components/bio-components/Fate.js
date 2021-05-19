@@ -1,19 +1,18 @@
 import React from 'react';
-
-// import { useSelector } from 'react-redux';
-// import { selectChar } from '../../redux/characterSlice';
-
 import { Col, Descriptions } from 'antd';
 
 const Fate = ({ fate }) => {
-  // const char = useSelector(selectChar)
   const fateKeys = Object.keys(fate);
   const fateItems = fateKeys.map(f => {
-    return(
-      <Descriptions.Item key={f} label={f.charAt(0).toUpperCase() + f.slice(1)}>
-        {fate[f]}
-      </Descriptions.Item>
-    )
+    if(f !== '__typename'){
+      return(
+        <Descriptions.Item key={f} label={f.charAt(0).toUpperCase() + f.slice(1)}>
+          {fate[f]}
+        </Descriptions.Item>
+      )
+    } else {
+      return null;
+    }
   })
 
   return(

@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 
 import CharacterSheet from './components/CharacterSheet';
 import Banner from './components/Banner';
@@ -12,22 +10,7 @@ import parchment from './textures/parchment.jpg';
 import { Layout } from 'antd';
 const { Header, Sider, Footer, Content} = Layout;
 
-const GET_CHARACTERS = gql`
-  {
-    characters {
-      bio {
-        name
-      }
-    }
-  }
-`
-
 function App() {
-  const { loading, error, data } = useQuery(GET_CHARACTERS)
-  if (error) return <h1>Something went wrong!</h1>
-  if (loading) return <h1>Loading...</h1>
-  console.log(data)
-
   return (
     <Layout style={{minHeight: '100vh'}}>
       <Header>
@@ -47,7 +30,7 @@ function App() {
         </Content>
       </Layout>
       <Footer>
-        {data[0]}
+        Created by Ben Stein
       </Footer>
     </Layout>
   );

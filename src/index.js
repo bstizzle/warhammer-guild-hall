@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-
 import './index.less';
 import App from './App';
-import { store } from './app/store';
-import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
@@ -18,11 +14,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <Provider store={store}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </Provider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')

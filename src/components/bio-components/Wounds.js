@@ -1,12 +1,8 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
-// import { selectChar } from '../../redux/characterSlice';
 
 import { Col, Descriptions } from 'antd';
 
 const Wounds = ({ stats, currentWounds }) => {
-  // const char = useSelector(selectChar)
-
   const totalWounds = (stats["S"].stat + stats["T"].stat*2 + stats["WP"].stat)/10
 
   return(

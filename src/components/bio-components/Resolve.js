@@ -1,19 +1,18 @@
 import React from 'react';
-
-// import { useSelector } from 'react-redux';
-// import { selectChar } from '../../redux/characterSlice';
-
 import { Col, Descriptions } from 'antd';
 
 const Resolve = ({ resolve }) => {
-  // const char = useSelector(selectChar)
   const resolveKeys = Object.keys(resolve);
   const resolveItems = resolveKeys.map(r => {
-    return(
-      <Descriptions.Item key={r} label={r.charAt(0).toUpperCase() + r.slice(1)}>
-        {resolve[r]}
-      </Descriptions.Item>
-    )
+    if(r !== '__typename'){
+      return(
+        <Descriptions.Item key={r} label={r.charAt(0).toUpperCase() + r.slice(1)}>
+          {resolve[r]}
+        </Descriptions.Item>
+      )
+    } else {
+      return null;
+    }
   })
 
   return(
