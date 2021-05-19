@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'antd';
 
+//server imports
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 //component imports
+import Loading from './Loading';
 import DetailSelector from './details-components/DetailSelector';
 import { Stats, SkillsSelector, Bio, Fate, Resolve, Wounds } from './bio-components/bioExport';
 
@@ -93,7 +95,7 @@ const CharacterSheet = () => {
   if(error) {
     return <h1>Something went wrong!</h1>
   } else if(loading) {
-    return <h1>Loading...</h1>
+    return <Loading />
   } else {
     if(char !== data.character){
       setChar(data.character)

@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Menu } from 'antd';
 
 const Home = () => {
   const history = useHistory();
+  const path = history.location.pathname
 
   function handleClick(e) {
-    if(e.key === '1') {
-      history.push('/')
-    } else if(e.key === '2'){
-      history.push('/sheet')
+    if(e.key === '/') {
+      history.push(e.key)
+    } else if(e.key === '/sheet'){
+      history.push(e.key)
     }
   }
 
   return(
     <Menu
-      defaultSelectedKeys={['1']}
+      defaultSelectedKeys={[path]}
       defaultOpenKeys={['sub1']}
       mode="inline"
     >
-      <Menu.Item key="1" onClick={handleClick}>Home Page</Menu.Item>
-      <Menu.Item key="2" onClick={handleClick}>Character Sheet</Menu.Item>
+      <Menu.Item key="/" onClick={handleClick}>Home Page</Menu.Item>
+      <Menu.Item key="/sheet" onClick={handleClick}>Character Sheet</Menu.Item>
       <Menu.Item key="3">Option 3</Menu.Item>
     </Menu>
   );
