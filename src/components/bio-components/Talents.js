@@ -28,12 +28,14 @@ const Talents = ({ talents }) => {
       if(i < 13){
         if(talents[i]){
           data1.push({
+            key: i,
             name: talents[i].name,
             times: talents[i].times,
             // desc: talents[i].desc
           })
         } else {
           data1.push({
+            key: i,
             name: "_________",
             times: "__",
             // desc: "__"
@@ -42,12 +44,14 @@ const Talents = ({ talents }) => {
       } else {
         if(talents[i]){
           data2.push({
+            key: i,
             name: talents[i].name,
             times: talents[i].times,
             // desc: talents[i].desc
           })
         } else {
           data2.push({
+            key: i,
             name: "_________",
             times: "__",
             // desc: "__"
@@ -59,12 +63,14 @@ const Talents = ({ talents }) => {
     for(i; i < 26; i++){
       if(i < 13){
         data1.push({
+          key: i,
           name: "_________",
           times: "__",
           // desc: "__"
         })
       } else {
         data2.push({
+          key: i,
           name: "_________",
           times: "__",
           // desc: "__"
@@ -82,7 +88,7 @@ const Talents = ({ talents }) => {
           bordered
           columns={columns}
           dataSource={data1}
-          rowKey="name"
+          rowKey="key"
         />
       </Col>
       <Col span={12}>
@@ -92,7 +98,7 @@ const Talents = ({ talents }) => {
           bordered
           columns={columns}
           dataSource={data2}
-          rowKey="name"
+          rowKey="key"
         />
       </Col>
     </Row>

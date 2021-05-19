@@ -1,5 +1,7 @@
 import React from 'react';
-import { Row, Col, Table } from 'antd';
+import { Row, Col, Table, Button } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+import EditableTable from './EditableTable';
 
 const BscSkills = ({ advSkills, stats }) => {
   function totalSkill({stat, adv}) {
@@ -38,6 +40,7 @@ const BscSkills = ({ advSkills, stats }) => {
       if(i < 13){ 
         if(k.name){
           advData1.push({
+            key: i,
             name: k.name,
             stat: k.stat,
             adv: k.adv,
@@ -45,6 +48,7 @@ const BscSkills = ({ advSkills, stats }) => {
           })
         } else {
           advData1.push({
+            key: i,
             name: "hi",
             stat: "hi",
             adv: "hi",
@@ -54,6 +58,7 @@ const BscSkills = ({ advSkills, stats }) => {
       } else {
         if(k.name){
           advData2.push({
+            key: i,
             name: k.name,
             stat: k.stat,
             adv: k.adv,
@@ -61,6 +66,7 @@ const BscSkills = ({ advSkills, stats }) => {
           })
         } else {
           advData2.push({
+            key: i,
             name: "hi",
             stat: "hi",
             adv: "hi",
@@ -73,12 +79,14 @@ const BscSkills = ({ advSkills, stats }) => {
   } else {
     for(i; i < 13; i++){
       advData1.push({
+        key: i,
         name: "_________",
         stat: "__",
         adv: "__",
         total: "__"
       })
       advData2.push({
+        key: i,
         name: "_________",
         stat: "__",
         adv: "__",
@@ -89,6 +97,7 @@ const BscSkills = ({ advSkills, stats }) => {
 
   return(
     <Row>
+      <EditableTable />
       <Col span={12}>
         <Table
           pagination={false}
@@ -96,7 +105,7 @@ const BscSkills = ({ advSkills, stats }) => {
           bordered
           columns={advColumns} 
           dataSource={advData1}
-          rowKey="name"
+          rowKey="key"
         />
       </Col>
       <Col span={12}>
@@ -106,7 +115,7 @@ const BscSkills = ({ advSkills, stats }) => {
           bordered
           columns={advColumns} 
           dataSource={advData2}
-          rowKey="name"
+          rowKey="key"
         />
       </Col>
     </Row>
