@@ -113,7 +113,7 @@ const CharacterSheet = () => {
             {char ? <Resolve resolve={char.resolve} /> : null}
             {char ? <Wounds stats={char.stats} currentWounds={char.currentWounds} /> : null}
           </Row>
-          {char ? <SkillsSelector stats={char.stats} basicSkills={char.basicSkills} /> : null}
+          {char ? <SkillsSelector stats={char.stats} advSkills={char.advSkills} basicSkills={char.basicSkills} talents={char.talents} /> : null}
         </Col>
         <Col span={8}>
           <DetailSelector />

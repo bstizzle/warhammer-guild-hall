@@ -6,7 +6,7 @@ import Talents from './Talents';
 import { Tabs } from 'antd'
 const { TabPane } = Tabs;
 
-const SkillsSelector = ({ basicSkills, stats }) => {
+const SkillsSelector = ({ basicSkills, advSkills, stats, talents }) => {
   return(
     <Tabs
       mode="horizontal"
@@ -17,10 +17,10 @@ const SkillsSelector = ({ basicSkills, stats }) => {
           <BscSkills stats={stats} basicSkills={basicSkills} />
         </TabPane>
         <TabPane tab="Advanced Skills" key="Advanced Skills">
-          {/* <AdvSkills /> */}
+          <AdvSkills stats={stats} advSkills={advSkills} />
         </TabPane>
         <TabPane tab="Talents" key="Talents">
-          {/* <Talents /> */}
+          <Talents talents={talents} />
         </TabPane>
     </Tabs>
   );

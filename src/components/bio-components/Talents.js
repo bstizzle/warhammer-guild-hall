@@ -1,10 +1,7 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Table, Row, Col } from 'antd';
 
-const Talents = () => {
-  let char;
-  const talentKeys = Object.keys(char.talents)
-
+const Talents = ({ talents }) => {
   const columns = [
     {
       title: 'Talents',
@@ -16,29 +13,89 @@ const Talents = () => {
       dataIndex: 'times',
       key: 'times'
     },
-    {
-      title: 'Description',
-      dataIndex: 'desc',
-      key: 'desc'
-    }
+    // {
+    //   title: 'Description',
+    //   dataIndex: 'desc',
+    //   key: 'desc'
+    // }
   ]
 
-  const data = talentKeys.map(k => {
-    return {
-      name: k,
-      times: char.talents[k]
+  let i = 0;
+  const data1 = [];
+  const data2 = [];
+  if(talents) {
+    for(i; i < 26; i++){
+      if(i < 13){
+        if(talents[i]){
+          data1.push({
+            name: talents[i].name,
+            times: talents[i].times,
+            // desc: talents[i].desc
+          })
+        } else {
+          data1.push({
+            name: "_________",
+            times: "__",
+            // desc: "__"
+          })
+        }
+      } else {
+        if(talents[i]){
+          data2.push({
+            name: talents[i].name,
+            times: talents[i].times,
+            // desc: talents[i].desc
+          })
+        } else {
+          data2.push({
+            name: "_________",
+            times: "__",
+            // desc: "__"
+          })
+        }
+      }
     }
-  })
+  } else {
+    for(i; i < 26; i++){
+      if(i < 13){
+        data1.push({
+          name: "_________",
+          times: "__",
+          // desc: "__"
+        })
+      } else {
+        data2.push({
+          name: "_________",
+          times: "__",
+          // desc: "__"
+        })
+      }
+    }
+  }
 
   return(
-    <Table
-      pagination={false}
-      size="small"
-      bordered
-      columns={columns}
-      dataSource={data}
-      rowKey="name"
-    />
+    <Row>
+      <Col span={12}>
+        <Table
+          pagination={false}
+          size="small"
+          bordered
+          columns={columns}
+          dataSource={data1}
+          rowKey="name"
+        />
+      </Col>
+      <Col span={12}>
+        <Table
+          pagination={false}
+          size="small"
+          bordered
+          columns={columns}
+          dataSource={data2}
+          rowKey="name"
+        />
+      </Col>
+    </Row>
   );
 }
 

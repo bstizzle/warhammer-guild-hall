@@ -1,12 +1,9 @@
 import React from 'react';
 import { Row, Col, Table } from 'antd';
 
-const BscSkills = () => {
-  let char;
-  const  advSkillKeys = Object.keys(char.advSkills)
-
+const BscSkills = ({ advSkills, stats }) => {
   function totalSkill({stat, adv}) {
-    const skill = char.stats[stat].stat + adv;
+    const skill = stats[stat].stat + adv;
     return skill;
   }
 
@@ -33,38 +30,63 @@ const BscSkills = () => {
     }
   ]
 
-  let i = 0
-  const advData1 = []
-  const advData2 = []
-  // const advData = advSkillKeys.map(k => {
-  //   return {
-  //     name: k,
-  //     stat: char.advSkills[k].stat,
-  //     adv: char.advSkills[k].adv,
-  //     total: totalSkill(char.advSkills[k])
-  //   }
-  // })
-
-  advSkillKeys.forEach(k => {
-    if(i < 13){
+  let i = 0;
+  const advData1 = [];
+  const advData2 = [];
+  if(advSkills) {
+    advSkills.forEach(k => {
+      if(i < 13){ 
+        if(k.name){
+          advData1.push({
+            name: k.name,
+            stat: k.stat,
+            adv: k.adv,
+            total: totalSkill(k.stat, k.adv)
+          })
+        } else {
+          advData1.push({
+            name: "hi",
+            stat: "hi",
+            adv: "hi",
+            total: "hi"
+          })
+        }
+      } else {
+        if(k.name){
+          advData2.push({
+            name: k.name,
+            stat: k.stat,
+            adv: k.adv,
+            total: totalSkill(k.stat, k.adv)
+          })
+        } else {
+          advData2.push({
+            name: "hi",
+            stat: "hi",
+            adv: "hi",
+            total: "hi"
+          })
+        }
+      i++;
+      }
+    })
+  } else {
+    for(i; i < 13; i++){
       advData1.push({
-        name: k,
-        stat: char.advSkills[k].stat,
-        adv: char.advSkills[k].adv,
-        total: totalSkill(char.advSkills[k])
+        name: "_________",
+        stat: "__",
+        adv: "__",
+        total: "__"
       })
-    } else {
       advData2.push({
-        name: k,
-        stat: char.advSkills[k].stat,
-        adv: char.advSkills[k].adv,
-        total: totalSkill(char.advSkills[k])
+        name: "_________",
+        stat: "__",
+        adv: "__",
+        total: "__"
       })
     }
-    i++;
-  })
+  }
 
-  // Refactor out into individual Skill components
   return(
     <Row>
       <Col span={12}>
