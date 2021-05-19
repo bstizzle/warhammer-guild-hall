@@ -1,8 +1,6 @@
 import React from 'react';
 import { Row, Col, Table, Button } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-// import EditableTable from './EditableTable';
-import HooksTable from './table-components/HooksTable';
+import EditableTable from './table-components/EditableTable';
 
 const BscSkills = ({ advSkills, stats }) => {
   function totalSkill({stat, adv}) {
@@ -114,8 +112,7 @@ const BscSkills = ({ advSkills, stats }) => {
 
   return(
     <Row>
-      {/* <EditableTable /> */}
-      <HooksTable data={dataSource} />
+      <EditableTable data={dataSource} />
       <Col span={12}>
         <Table
           pagination={false}
