@@ -41,11 +41,15 @@ const resolvers = {
   },
   Mutation: {
     addCharacter (parent, args, context, info) {
-      const { userId, bio, stats } = args
+      const { userId, bio, stats, talents, fate, resolve, currentWounds } = args
       const charObj = new Character({
         userId,
         bio,
-        stats
+        stats,
+        talents,
+        fate,
+        resolve,
+        currentWounds
       })
       return charObj.save()
         .then(result => {

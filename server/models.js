@@ -67,6 +67,33 @@ const StatsSchema = new Schema({
   },
 })
 
+const TalentSchema = new Schema({
+  name: {
+    type: String
+  },
+  times: {
+    type: Number
+  }
+})
+
+const FateSchema = new Schema({
+  fate: {
+    type: Number
+  },
+  fortune: {
+    type: Number
+  }
+})
+
+const ResolveSchema = new Schema({
+  resolve: {
+    type: Number
+  },
+  resilience: {
+    type: Number
+  }
+})
+
 const CharacterSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
@@ -78,6 +105,18 @@ const CharacterSchema = new Schema({
   },
   stats: {
     type: StatsSchema
+  },
+  talents: {
+    type: [TalentSchema]
+  },
+  fate: {
+    type: FateSchema
+  },
+  resolve: {
+    type: ResolveSchema
+  },
+  currentWounds: {
+    type: Number
   }
 })
 

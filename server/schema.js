@@ -30,6 +30,21 @@ const typeDefs = gql`
     Fel: Stat
   }
 
+  type Fate {
+    fate: Int
+    fortune: Int
+  }
+
+  type Resolve {
+    resolve: Int
+    resilience: Int
+  }
+
+  type Talent {
+    name: String
+    times: Int
+  }
+
   type Character {
     _id: String
     userId: String  
@@ -37,9 +52,10 @@ const typeDefs = gql`
     stats: Stats
     # basicSkills: [BasicSkill]
     # advSkills: [AdvSkill]
-    # talents: [Talent]
-    # fate: [Fate]
-    # resolve: [Resolve]
+    talents: [Talent]
+    fate: Fate
+    resolve: Resolve
+    currentWounds: Int
   }
 
   type User {
@@ -83,11 +99,32 @@ const typeDefs = gql`
     Fel: StatInput
   }
 
+  input FateInput {
+    fate: Int
+    fortune: Int
+  }
+
+  input ResolveInput {
+    resolve: Int
+    resilience: Int
+  } 
+  
+  input TalentInput {
+    name: String
+    times: Int
+  }
+
   type Mutation {
     addCharacter(
       userId: String
       bio: BioInput
       stats: StatsInput
+      # bsc
+      # adv
+      talents: [TalentInput]
+      fate: FateInput
+      resolve: ResolveInput
+      currentWounds: Int
     ): Character
 
     addUser(name: String, email: String): User
