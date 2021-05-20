@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CharContext } from '../CharacterSheet';
+import { CharContext } from '../../CharacterSheet';
 import { Table, Row, Col } from 'antd';
 
 const Talents = () => {

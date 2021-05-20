@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { CharContext } from '../CharacterSheet';
+import { CharContext } from '../../CharacterSheet';
 import { Row, Col } from 'antd';
-import EditableTable from './table-components/EditableTable';
+import EditableTable from '../../table-components/EditableTable';
 
 const AdvSkills = () => {
   const advSkills = useContext(CharContext).advSkills;

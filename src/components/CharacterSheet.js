@@ -128,8 +128,7 @@ const CharacterSheet = () => {
             Armor Points
             Psychology
             Corruption/Mutation
-            Spells
-            Wounds
+            Spells  
             Wealth
             Encumberance
           */}

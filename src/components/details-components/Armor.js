@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Table } from 'antd';
+import EditableTable from '../table-components/EditableTable';
 
 const Armor = () => {
 
@@ -8,27 +7,32 @@ const Armor = () => {
     {
       title: 'Name',
       dataIndex: 'name',
-      key: 'name'
+      key: 'name',
+      editable: true
     },
     {
       title: 'Location',
       dataIndex: 'location',
-      key: 'location'
+      key: 'location',
+      editable: true
     },
     {
       title: 'Enc',
       dataIndex: 'enc',
-      key: 'enc'
+      key: 'enc',
+      editable: true
     },
     {
       title: 'AP',
       dataIndex: 'ap',
-      key: 'ap'
+      key: 'ap',
+      editable: true
     },
     {
       title: 'Qualities',
       dataIndex: 'qualities',
-      key: 'qualities'
+      key: 'qualities',
+      editable: true
     }
   ]
 
@@ -41,14 +45,7 @@ const Armor = () => {
   }]
 
   return(
-    <Table 
-      pagination={false}
-      size="small"
-      bordered
-      columns={columns}
-      dataSource={data}
-      rowKey="name"
-    />
+    <EditableTable data={data} columns={columns} />
   );
 }
 

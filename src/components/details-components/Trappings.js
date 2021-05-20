@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Table } from 'antd'
+import EditableTable from '../table-components/EditableTable';
 
 const Trappings = () => {
 
@@ -8,17 +7,20 @@ const Trappings = () => {
     {
       title: 'Name',
       dataIndex: 'name',
-      key: 'name'
+      key: 'name',
+      editable: true
     },
     {
       title: 'Amount',
       dataIndex: 'amount',
-      key: 'amount'
+      key: 'amount',
+      editable: true
     },
     {
       title: 'Enc',
       dataIndex: 'enc',
-      key: 'enc'
+      key: 'enc',
+      editable: true
     }
   ]
 
@@ -36,14 +38,7 @@ const Trappings = () => {
   ]
 
   return(
-    <Table 
-      pagination={false}
-      size="small"
-      bordered
-      columns={columns}
-      dataSource={data}
-      rowKey="name"
-    />
+    <EditableTable data={data} columns={columns} />
   );
 }
 
