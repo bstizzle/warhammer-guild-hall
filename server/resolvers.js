@@ -1,4 +1,4 @@
-const { Character, User } = require('./models');
+const { Character, User, BasicSkill } = require('./models');
 
 const resolvers = {
   Query: {
@@ -62,7 +62,7 @@ const resolvers = {
     },
     updateCharacter (parent, args, context, info) {
       const { id, bio, stats, basicSkills, talents, fate, resolve, currentWounds } = args
-      const charObj = Character.findOneAndUpdate({_id: id}, {bio, stats, basicSkills, talents, fate, resolve, currentWounds}, {new: true})
+      const charObj = Character.findOneAndUpdate({_id: id}, {bio, currentWounds}, {new: true})
       return charObj
         .then(result => {
           return { ...result._doc}

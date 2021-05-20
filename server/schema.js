@@ -31,6 +31,7 @@ const typeDefs = gql`
   }
 
   type BasicSkill {
+    _id: String
     name: String
     desc: String
     stat: String
@@ -74,8 +75,8 @@ const typeDefs = gql`
   type Query {
     characters: [Character]
     users: [User]
-    character (id: String): Character,
-    user (id: String): User
+    character (id: String!): Character
+    user (id: String!): User
   }
 
   input BioInput {
