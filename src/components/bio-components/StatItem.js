@@ -2,13 +2,14 @@ import React, { useState, useEffect, useContext } from 'react';
 import { CharContext } from '../CharContextProvider';
 import { Popover, Button, InputNumber } from 'antd';
 
-const StatItem = ({ s, stats, setStats }) => {
-  const { char, setChar } = useContext(CharContext)
+const StatItem = ({ s, stats }) => {
+  const { setChar } = useContext(CharContext)
   const [visible, setVisible] = useState(false)
   const [init, setInit] = useState(stats[s].stat)
   const [adv, setAdv] = useState(stats[s].adv)
 
   useEffect(() => {
+    console.log('stat effect!')
     setChar(char => ({
       ...char,
       stats: {
@@ -20,7 +21,7 @@ const StatItem = ({ s, stats, setStats }) => {
         }
       })
     )
-  }, [setChar, s, stats, init, adv])
+  }, [init, adv])
   
   function handleVisible(){
     if(visible === false){

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { CharContext } from '../CharContextProvider';
 import { Col, Descriptions, InputNumber } from 'antd';
 
@@ -7,6 +7,17 @@ const Fate = () => {
   const fate = char.fate
   const [fateState, setFateState] = useState(fate.fate)
   const [fortState, setFortState] = useState(fate.fortune)
+
+  useEffect(() => {
+    console.log('fate effect!')
+    setChar(char => ({
+      ...char,
+      fate: {
+        fate: fateState,
+        fortune: fortState
+      }
+    }))
+  }, [fateState, fortState])
 
   return(
     <Col span={8}>

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CharContext } from '../CharContextProvider';
 import StatItem from './StatItem';
 
@@ -6,7 +6,7 @@ import { Descriptions } from 'antd';
 
 const Stats = () => {
   const { char } = useContext(CharContext)
-  const [stats, setStats] = useState(char.stats)
+  const stats = char.stats
 
   const statKeys = Object.keys(stats)
 
@@ -14,7 +14,7 @@ const Stats = () => {
     if(s !== '__typename'){
       return(
         <Descriptions.Item key={s} label={s}>
-          <StatItem key={s} s={s} stats={stats} setStats={setStats}/>
+          <StatItem key={s} s={s} stats={stats} />
         </Descriptions.Item>
       )
     } else {

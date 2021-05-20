@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import EditableTable from '../../table-components/EditableTable';
 
 const Talents = () => {
-  const { char, setChar } = useContext(CharContext)
+  const { char } = useContext(CharContext)
   const talents = char.talents;
   
   const columns = [

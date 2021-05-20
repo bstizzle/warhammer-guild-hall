@@ -17,6 +17,7 @@ const Bio = () => {
   const [carPathStr, setCarPathStr] = useState(bio.careerPath)
 
   useEffect(() => {
+    console.log('bio effect!')
     setChar(char => ({
         ...char,
         bio: {
@@ -30,8 +31,8 @@ const Bio = () => {
         }
       })
     )
-  }, [setChar, nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr])
-
+  }, [nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr])
+  // nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr
   return(
     <Descriptions
       size="small"

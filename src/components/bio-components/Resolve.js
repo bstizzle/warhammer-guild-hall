@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { CharContext } from '../CharContextProvider';
 import { Col, Descriptions, InputNumber } from 'antd';
 
@@ -7,6 +7,17 @@ const Resolve = () => {
   const resolve = char.resolve
   const [resolveState, setResolveState] = useState(resolve.resolve)
   const [resilState, setResilState] = useState(resolve.resilience)
+
+  useEffect(() => {
+    console.log('resolve effect!')
+    setChar(char => ({
+      ...char,
+      resolve: {
+        resolve: resolveState,
+        resilience: resilState
+      }
+    }))
+  }, [resolveState, resilState])
 
   return(
     <Col span={8}>

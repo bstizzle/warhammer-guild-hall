@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import EditableTable from '../../table-components/EditableTable';
 
 const AdvSkills = () => {
-  const { char, setChar } = useContext(CharContext)
+  const { char } = useContext(CharContext)
   const advSkills = char.advSkills;
   const stats = char.stats;
 
@@ -110,26 +110,6 @@ const AdvSkills = () => {
       <Col span={12}>
         <EditableTable data={advData2} columns={advColumns}/>
       </Col>
-      {/* <Col span={12}>
-        <Table
-          pagination={false}
-          size="small"
-          bordered
-          columns={advColumns} 
-          dataSource={advData1}
-          rowKey="key"
-        />
-      </Col>
-      <Col span={12}>
-      <Table
-          pagination={false}
-          size="small"
-          bordered
-          columns={advColumns} 
-          dataSource={advData2}
-          rowKey="key"
-        />
-      </Col> */}
     </Row>
   );
 }
