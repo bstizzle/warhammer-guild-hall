@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
-import { CharContext } from '../../CharacterSheet';
+import React, { useContext, useEffect } from 'react';
+import { CharContext } from '../../CharContextProvider';
 import { Row, Col } from 'antd';
 import EditableTable from '../../table-components/EditableTable';
 
 const BscSkills = () => {
-  const [char, setChar] = useContext(CharContext)
+  const { char, setChar } = useContext(CharContext)
   const basicSkills = char.basicSkills;
   const stats = char.stats;
+  console.log(stats)
 
   function totalSkill(stat, adv) {
-    const skill = stats[stat].stat + adv;
+    console.log(stats[stat].stat + stats[stat].adv + adv)
+    let skill = stats[stat].stat + stats[stat].adv + adv;
     return skill;
   }
 

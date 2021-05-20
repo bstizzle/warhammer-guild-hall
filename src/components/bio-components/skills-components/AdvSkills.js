@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { CharContext } from '../../CharacterSheet';
+import { CharContext } from '../../CharContextProvider';
 import { Row, Col } from 'antd';
 import EditableTable from '../../table-components/EditableTable';
 
 const AdvSkills = () => {
-  const [char, setChar] = useContext(CharContext)
+  const { char, setChar } = useContext(CharContext)
   const advSkills = char.advSkills;
   const stats = char.stats;
 

@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { CharContext } from '../CharacterSheet';
+import { CharContext } from '../CharContextProvider';
 import { Col, Descriptions, InputNumber } from 'antd';
 
 const Fate = () => {
-  const [char, setChar] = useContext(CharContext)
+  const { char, setChar } = useContext(CharContext)
   const fate = char.fate
   const [fateState, setFateState] = useState(fate.fate)
   const [fortState, setFortState] = useState(fate.fortune)
@@ -15,13 +15,13 @@ const Fate = () => {
         layout="vertical"
         bordered
         style={{background: '#141414'}}
-        column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
+        column={{ xxl: 2, xl: 2, lg: 1, md: 1, sm: 1, xs: 1 }}
       >
         <Descriptions.Item key="fate" label="Fate">
-          <InputNumber size="small" min={0} max={99} defaultValue={fateState} onChange={setFateState} />
+          <InputNumber size="small" style={{maxWidth: '40%'}} min={0} max={99} defaultValue={fateState} onChange={setFateState} />
         </Descriptions.Item>
         <Descriptions.Item key="fortune" label="Fortune">
-          <InputNumber size="small" min={0} max={99} defaultValue={fortState} onChange={setFortState} />
+          <InputNumber size="small" style={{maxWidth: '40%'}} min={0} max={99} defaultValue={fortState} onChange={setFortState} />
         </Descriptions.Item>
       </Descriptions>
     </Col>

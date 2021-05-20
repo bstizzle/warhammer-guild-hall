@@ -1,20 +1,24 @@
 import React, { useContext } from 'react';
-import { CharContext } from '../../CharacterSheet';
+import { CharContext } from '../../CharContextProvider';
 import { Table, Row, Col } from 'antd';
+import EditableTable from '../../table-components/EditableTable';
 
 const Talents = () => {
-  const talents = useContext(CharContext).talents;
+  const { char, setChar } = useContext(CharContext)
+  const talents = char.talents;
   
   const columns = [
     {
       title: 'Talents',
       dataIndex: 'name',
-      key: 'name'
+      key: 'name',
+      editable: true
     },
     {
       title: 'Times Taken',
       dataIndex: 'times',
-      key: 'times'
+      key: 'times',
+      editable: true
     },
     // {
     //   title: 'Description',
@@ -39,9 +43,9 @@ const Talents = () => {
         } else {
           data1.push({
             key: i,
-            name: "_________",
-            times: "__",
-            // desc: "__"
+            name: "",
+            times: "",
+            // desc: ""
           })
         }
       } else {
@@ -55,9 +59,9 @@ const Talents = () => {
         } else {
           data2.push({
             key: i,
-            name: "_________",
-            times: "__",
-            // desc: "__"
+            name: "",
+            times: "",
+            // desc: ""
           })
         }
       }
@@ -67,16 +71,16 @@ const Talents = () => {
       if(i < 13){
         data1.push({
           key: i,
-          name: "_________",
-          times: "__",
-          // desc: "__"
+          name: "",
+          times: "",
+          // desc: ""
         })
       } else {
         data2.push({
           key: i,
-          name: "_________",
-          times: "__",
-          // desc: "__"
+          name: "",
+          times: "",
+          // desc: ""
         })
       }
     }
@@ -85,24 +89,10 @@ const Talents = () => {
   return(
     <Row>
       <Col span={12}>
-        <Table
-          pagination={false}
-          size="small"
-          bordered
-          columns={columns}
-          dataSource={data1}
-          rowKey="key"
-        />
+        <EditableTable data={data1} columns={columns} />
       </Col>
       <Col span={12}>
-        <Table
-          pagination={false}
-          size="small"
-          bordered
-          columns={columns}
-          dataSource={data2}
-          rowKey="key"
-        />
+        <EditableTable data={data2} columns={columns} />
       </Col>
     </Row>
   );

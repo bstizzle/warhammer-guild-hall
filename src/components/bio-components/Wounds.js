@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { CharContext } from '../CharacterSheet';
+import { CharContext } from '../CharContextProvider';
 import { Col, Descriptions } from 'antd';
 
 const Wounds = () => {
-  const [char, setChar] = useContext(CharContext)
+  const { char, setChar } = useContext(CharContext)
   const stats = char.stats;
   const currentWounds = char.currentWounds;
   const totalWounds = (stats["S"].stat + stats["T"].stat*2 + stats["WP"].stat)/10
@@ -15,7 +15,7 @@ const Wounds = () => {
         layout="vertical"
         bordered
         style={{background: '#141414'}}
-        column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
+        column={{ xxl: 2, xl: 2, lg: 1, md: 1, sm: 1, xs: 1 }}
       >
         <Descriptions.Item label="Wounds">{currentWounds} / {totalWounds}</Descriptions.Item>
         <Descriptions.Item label="+">-</Descriptions.Item>

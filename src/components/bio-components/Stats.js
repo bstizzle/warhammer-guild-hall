@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
-import { CharContext } from '../CharacterSheet';
+import React, { useState, useContext } from 'react';
+import { CharContext } from '../CharContextProvider';
 import StatItem from './StatItem';
 
 import { Descriptions } from 'antd';
 
 const Stats = () => {
-  const [char, setChar] = useContext(CharContext)
-  const stats = char.stats
+  const { char } = useContext(CharContext)
+  const [stats, setStats] = useState(char.stats)
+
   const statKeys = Object.keys(stats)
 
   const allStats = statKeys.map(s => {
     if(s !== '__typename'){
       return(
         <Descriptions.Item key={s} label={s}>
-          <StatItem key={s} s={s} stats={stats}/>
+          <StatItem key={s} s={s} stats={stats} setStats={setStats}/>
         </Descriptions.Item>
       )
     } else {

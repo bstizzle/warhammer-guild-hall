@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CharContext } from '../CharacterSheet';
+import { CharContext } from '../CharContextProvider';
 import { Descriptions, Typography } from 'antd'
 const { Text } = Typography
 
 const Bio = () => {
-  const [char, setChar] = useContext(CharContext)
+  const { char, setChar } = useContext(CharContext)
   const bio = char.bio
 
   //controlled form state
@@ -30,7 +30,7 @@ const Bio = () => {
         }
       })
     )
-  }, [nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr])
+  }, [setChar, nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr])
 
   return(
     <Descriptions
@@ -40,9 +40,6 @@ const Bio = () => {
       style={{background: '#141414'}}
     >
       <Descriptions.Item label="Name"><Text editable={{onChange: setNameStr}}>{nameStr}</Text></Descriptions.Item>
-
-      {/* <Descriptions.Item label="Name"><Text editable={{onChange: ((e) => handleSet('name', e))}}>{bio.name}</Text></Descriptions.Item> */}
-
       <Descriptions.Item label="Species"><Text editable={{onChange: setSpecStr}}>{specStr}</Text></Descriptions.Item>
       <Descriptions.Item label="Class"><Text editable={{onChange: setClassStr}}>{classStr}</Text></Descriptions.Item>
       <Descriptions.Item label="Career"><Text editable={{onChange: setCarStr}}>{carStr}</Text></Descriptions.Item>
