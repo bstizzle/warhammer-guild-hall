@@ -39,9 +39,10 @@ const Armor = () => {
   const data = [{
     name: 'Leather Jerkin',
     location: 'Chest',
-    enc: '1',
-    ap: '1',
-    qualities: 'blank'
+    enc: 1,
+    ap: 1,
+    qualities: 'blank',
+    key: 0
   }]
 
   return(

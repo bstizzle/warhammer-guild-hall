@@ -5,7 +5,8 @@ import StatItem from './StatItem';
 import { Descriptions } from 'antd';
 
 const Stats = () => {
-  const stats = useContext(CharContext).stats;
+  const [char, setChar] = useContext(CharContext)
+  const stats = char.stats
   const statKeys = Object.keys(stats)
 
   const allStats = statKeys.map(s => {

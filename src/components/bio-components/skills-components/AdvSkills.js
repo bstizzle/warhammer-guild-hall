@@ -4,8 +4,9 @@ import { Row, Col } from 'antd';
 import EditableTable from '../../table-components/EditableTable';
 
 const AdvSkills = () => {
-  const advSkills = useContext(CharContext).advSkills;
-  const stats = useContext(CharContext).stats;
+  const [char, setChar] = useContext(CharContext)
+  const advSkills = char.advSkills;
+  const stats = char.stats;
 
   function totalSkill({stat, adv}) {
     const skill = stats[stat].stat + adv;

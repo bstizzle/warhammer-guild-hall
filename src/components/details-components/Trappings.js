@@ -27,13 +27,15 @@ const Trappings = () => {
   const data = [
     {
       name: 'Cloak',
-      amount: '1',
-      enc: '1',
+      amount: 1,
+      enc: 1,
+      key: 0
     },
     {
       name: 'Animal Traps',
-      amount: '2',
-      enc: '2',
+      amount: 2,
+      enc: 2,
+      key: 1
     }
   ]
 

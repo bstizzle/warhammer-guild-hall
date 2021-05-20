@@ -31,9 +31,10 @@ const Armor = () => {
 
   const data = [{
     name: 'Sword',
-    enc: '1',
-    damage: '5',
-    qualities: 'blank'
+    enc: 1,
+    damage: 5,
+    qualities: 'blank',
+    key: 0
   }]
 
   return(

@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { CharContext } from '../CharacterSheet';
 import { Col, Descriptions } from 'antd';
 
 const Wounds = () => {
-  const stats = useContext(CharContext).stats;
-  const currentWounds = useContext(CharContext).currentWounds;
+  const [char, setChar] = useContext(CharContext)
+  const stats = char.stats;
+  const currentWounds = char.currentWounds;
   const totalWounds = (stats["S"].stat + stats["T"].stat*2 + stats["WP"].stat)/10
 
   return(

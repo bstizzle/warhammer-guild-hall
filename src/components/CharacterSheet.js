@@ -91,7 +91,7 @@ const GET_CHARACTER = gql`
 export const CharContext = React.createContext(null);
 
 const CharacterSheet = () => {
-  const [char, setChar] = useState();
+  const [char, setChar] = useState(null);
   const { loading, error, data } = useQuery(GET_CHARACTER)
 
   if(error) {
@@ -99,13 +99,14 @@ const CharacterSheet = () => {
   } else if(loading) {
     return <Loading />
   } else {
-    if(char !== data.character){
+    console.log(char)
+    if(char === null){
       setChar(data.character)
     }
     console.log(char)
 
     return(
-      <CharContext.Provider value={char}>
+      <CharContext.Provider value={[char, setChar]}>
         <Row>
           <Col span={16}>
             <Bio />

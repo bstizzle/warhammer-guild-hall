@@ -7,7 +7,7 @@ import { Typography } from 'antd';
 const { Text } = Typography;
 
 const EditableCell = ({ editable, children }) => {
-  const [field, setField] = useState(children[1])
+  const [field, setField] = useState(children[1].toString())
 
   // function handleSetField(string) {
   //   updateCharacter({

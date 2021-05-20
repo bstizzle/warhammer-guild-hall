@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { CharContext } from '../CharacterSheet';
 import { Descriptions, Typography } from 'antd'
 const { Text } = Typography
 
 const Bio = () => {
-  const bio = useContext(CharContext).bio;
+  const [char, setChar] = useContext(CharContext)
+  const bio = char.bio
 
   //controlled form state
   const [nameStr, setNameStr] = useState(bio.name)
@@ -15,6 +16,22 @@ const Bio = () => {
   const [statusStr, setStatusStr] = useState(bio.status)
   const [carPathStr, setCarPathStr] = useState(bio.careerPath)
 
+  useEffect(() => {
+    setChar(char => ({
+        ...char,
+        bio: {
+          name: nameStr,
+          species: specStr,
+          class: classStr,
+          career: carStr,
+          careerLevel: carLvlStr,
+          status: statusStr,
+          careerPath: carPathStr
+        }
+      })
+    )
+  }, [nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr])
+
   return(
     <Descriptions
       size="small"
@@ -23,6 +40,9 @@ const Bio = () => {
       style={{background: '#141414'}}
     >
       <Descriptions.Item label="Name"><Text editable={{onChange: setNameStr}}>{nameStr}</Text></Descriptions.Item>
+
+      {/* <Descriptions.Item label="Name"><Text editable={{onChange: ((e) => handleSet('name', e))}}>{bio.name}</Text></Descriptions.Item> */}
+
       <Descriptions.Item label="Species"><Text editable={{onChange: setSpecStr}}>{specStr}</Text></Descriptions.Item>
       <Descriptions.Item label="Class"><Text editable={{onChange: setClassStr}}>{classStr}</Text></Descriptions.Item>
       <Descriptions.Item label="Career"><Text editable={{onChange: setCarStr}}>{carStr}</Text></Descriptions.Item>

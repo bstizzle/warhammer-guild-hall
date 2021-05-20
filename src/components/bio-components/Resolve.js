@@ -1,21 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { CharContext } from '../CharacterSheet';
-import { Col, Descriptions } from 'antd';
+import { Col, Descriptions, InputNumber } from 'antd';
 
 const Resolve = () => {
-  const resolve = useContext(CharContext).resolve;
-  const resolveKeys = Object.keys(resolve);
-  const resolveItems = resolveKeys.map(r => {
-    if(r !== '__typename'){
-      return(
-        <Descriptions.Item key={r} label={r.charAt(0).toUpperCase() + r.slice(1)}>
-          {resolve[r]}
-        </Descriptions.Item>
-      )
-    } else {
-      return null;
-    }
-  })
+  const [char, setChar] = useContext(CharContext)
+  const resolve = char.resolve
+  const [resolveState, setResolveState] = useState(resolve.resolve)
+  const [resilState, setResilState] = useState(resolve.resilience)
 
   return(
     <Col span={8}>
@@ -26,7 +17,12 @@ const Resolve = () => {
         style={{background: '#141414'}}
         column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
       >
-        {resolveItems}
+        <Descriptions.Item key="resolve" label="Resolve">
+          <InputNumber size="small" min={0} max={99} defaultValue={resolveState} onChange={setResolveState} />
+        </Descriptions.Item>
+        <Descriptions.Item key="resilince" label="Resilience">
+          <InputNumber size="small" min={0} max={99} defaultValue={resilState} onChange={setResilState} />
+        </Descriptions.Item>
       </Descriptions>
     </Col>
   );

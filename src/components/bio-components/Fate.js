@@ -1,21 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { CharContext } from '../CharacterSheet';
-import { Col, Descriptions } from 'antd';
+import { Col, Descriptions, InputNumber } from 'antd';
 
 const Fate = () => {
-  const fate = useContext(CharContext).fate;
-  const fateKeys = Object.keys(fate);
-  const fateItems = fateKeys.map(f => {
-    if(f !== '__typename'){
-      return(
-        <Descriptions.Item key={f} label={f.charAt(0).toUpperCase() + f.slice(1)}>
-          {fate[f]}
-        </Descriptions.Item>
-      )
-    } else {
-      return null;
-    }
-  })
+  const [char, setChar] = useContext(CharContext)
+  const fate = char.fate
+  const [fateState, setFateState] = useState(fate.fate)
+  const [fortState, setFortState] = useState(fate.fortune)
 
   return(
     <Col span={8}>
@@ -26,7 +17,12 @@ const Fate = () => {
         style={{background: '#141414'}}
         column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
       >
-        {fateItems}
+        <Descriptions.Item key="fate" label="Fate">
+          <InputNumber size="small" min={0} max={99} defaultValue={fateState} onChange={setFateState} />
+        </Descriptions.Item>
+        <Descriptions.Item key="fortune" label="Fortune">
+          <InputNumber size="small" min={0} max={99} defaultValue={fortState} onChange={setFortState} />
+        </Descriptions.Item>
       </Descriptions>
     </Col>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Popconfirm } from 'antd';
+import { Table } from 'antd';
 import EditableCell from './EditableCell';
 
 const EditableTable = ({ data, columns }) => {
