@@ -13,7 +13,7 @@ import { Stats, SkillsSelector, Bio, Fate, Resolve, Wounds } from './bio-compone
 
 const GET_CHARACTER = gql`
   {
-    character(id: "60a4a31c9d89db279860f8e4"){
+    character(id: "60a5d51a922a91147c700779"){
       bio {
         name
         species

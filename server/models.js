@@ -69,9 +69,7 @@ const UserSchema = new Schema({
 
 const Character = mongoose.model('Character', CharacterSchema)
 const User = mongoose.model('User', UserSchema)
-const BasicSkill = mongoose.model('BasicSkill', BasicSkillSchema)
 module.exports = {
   Character,
-  User,
-  BasicSkill
+  User
 }

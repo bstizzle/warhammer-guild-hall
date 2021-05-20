@@ -1,4 +1,4 @@
-const { Character, User, BasicSkill } = require('./models');
+const { Character, User } = require('./models');
 
 const resolvers = {
   Query: {
@@ -14,10 +14,11 @@ const resolvers = {
     character (parent, args, context, info) {
       return Character.findOne({ _id: args.id })
         .then (character => {
-            return { ...character._doc }
+          console.log(character.basicSkills.filter(s => s.name === 'Bribery'))
+          return { ...character._doc }
         })
         .catch (err => {
-            console.error(err)
+          console.error(err)
         })
     },
     users (parent, args, context, info) {
