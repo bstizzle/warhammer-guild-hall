@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { CharContext } from '../../CharContextProvider';
-import { Table, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 import EditableTable from '../../table-components/EditableTable';
 
 const Talents = () => {

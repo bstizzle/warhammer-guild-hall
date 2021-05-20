@@ -7,10 +7,8 @@ const BscSkills = () => {
   const { char, setChar } = useContext(CharContext)
   const basicSkills = char.basicSkills;
   const stats = char.stats;
-  console.log(stats)
 
   function totalSkill(stat, adv) {
-    console.log(stats[stat].stat + stats[stat].adv + adv)
     let skill = stats[stat].stat + stats[stat].adv + adv;
     return skill;
   }
@@ -43,13 +41,14 @@ const BscSkills = () => {
   const bscData1 = []
   const bscData2 = []
   basicSkills.forEach(k => {
+    const total = totalSkill(k.stat, k.adv)
     if(i < 13){ 
       bscData1.push({
         key: i,
         name: k.name,
         stat: k.stat,
         adv: k.adv,
-        total: totalSkill(k.stat, k.adv)
+        total: total
       })
     } else {
       bscData2.push({
@@ -57,7 +56,7 @@ const BscSkills = () => {
         name: k.name,
         stat: k.stat,
         adv: k.adv,
-        total: totalSkill(k.stat, k.adv)
+        total: total
       })
     }
     i++;

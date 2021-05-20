@@ -20,7 +20,7 @@ const StatItem = ({ s, stats, setStats }) => {
         }
       })
     )
-  }, [setStats, init, adv])
+  }, [setChar, s, stats, init, adv])
   
   function handleVisible(){
     if(visible === false){

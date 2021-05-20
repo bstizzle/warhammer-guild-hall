@@ -1,17 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Table } from 'antd';
 import EditableCell from './EditableCell';
 
 const EditableTable = ({ data, columns }) => {
-  const [tableData, setTableData] = useState(data)
-
-  function handleSave(row) {
-    const newData = [...tableData]
-    const index = newData.findIndex((item) => row.key === item.key)
-    newData.splice(index, 1, { ...row })
-    setTableData(newData)
-  }
-
   const components = {
     body: {
       cell: EditableCell
@@ -20,7 +11,12 @@ const EditableTable = ({ data, columns }) => {
 
   const editableColumns = columns.map((c) => {
     if(!c.editable) {
-      return c;
+      return {
+        ...c,
+        onCell: (record) => ({
+          record
+        })
+      }
     }
 
     return {
@@ -29,8 +25,7 @@ const EditableTable = ({ data, columns }) => {
         record,
         editable: c.editable,
         dataIndex: c.dataIndex,
-        title: c.title,
-        handleSave: handleSave
+        title: c.title
       })
     }
   })
@@ -42,7 +37,7 @@ const EditableTable = ({ data, columns }) => {
         size="small"
         components={components}
         bordered
-        dataSource={tableData}
+        dataSource={data}
         columns={editableColumns}
       />
     </div>
