@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Col, Table } from 'antd';
+import { Row, Col } from 'antd';
+import EditableTable from './table-components/EditableTable';
 
 const BscSkills = ({ basicSkills, stats }) => {
   function totalSkill(stat, adv) {
@@ -37,6 +38,7 @@ const BscSkills = ({ basicSkills, stats }) => {
   basicSkills.forEach(k => {
     if(i < 13){ 
       bscData1.push({
+        key: i,
         name: k.name,
         stat: k.stat,
         adv: k.adv,
@@ -44,6 +46,7 @@ const BscSkills = ({ basicSkills, stats }) => {
       })
     } else {
       bscData2.push({
+        key: i,
         name: k.name,
         stat: k.stat,
         adv: k.adv,
@@ -53,28 +56,13 @@ const BscSkills = ({ basicSkills, stats }) => {
     i++;
   })
 
-  // Refactor out into individual Skill components
   return(
     <Row>
       <Col span={12}>
-        <Table
-          pagination={false}
-          size="small"
-          bordered
-          columns={bscColumns}
-          dataSource={bscData1}
-          rowKey="name"
-        />
+        <EditableTable data={bscData1} columns={bscColumns}/>
       </Col>
       <Col span={12}>
-        <Table
-          pagination={false}
-          size="small"
-          bordered
-          columns={bscColumns}
-          dataSource={bscData2}
-          rowKey="name"
-        />
+        <EditableTable data={bscData2} columns={bscColumns}/>
       </Col>
     </Row>
   );

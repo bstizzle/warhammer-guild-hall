@@ -1,65 +1,10 @@
 import React, { useState } from 'react';
-import { Table, Button, Popconfirm } from 'antd';
-import EditableRow from './EditableRow';
+import { Table, Popconfirm } from 'antd';
 import EditableCell from './EditableCell';
-// import { PlusOutlined } from '@ant-design/icons';
 
-const EditableTable = ({ data }) => {
+const EditableTable = ({ data, columns }) => {
   const [tableData, setTableData] = useState(data)
-  // const [count, setCount] = useState(data.length)
 
-  const columns = [
-    {
-      title: 'name',
-      dataIndex: 'name',
-      width: '30%',
-      editable: true,
-    },
-    {
-      title: 'age',
-      dataIndex: 'age',
-    },
-    {
-      title: 'address',
-      dataIndex: 'address',
-    },
-    {
-      title: 'operation',
-      dataIndex: 'operation',
-      render: (text, record, index) =>
-        tableData.length >= 1 ? (
-          <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record.key)}>
-            Delete
-          </Popconfirm>
-        ) : null,
-    },
-  ]
-
-  function handleDelete(key) {
-    console.log(key)
-    const dataSource = [...tableData]
-    console.log(dataSource)
-    const newData = dataSource.filter((item) => {
-      console.log(item)
-      console.log(item.key)
-      console.log(key)
-      return item.key !== key;
-    })
-    console.log(newData)
-    setTableData(newData)
-  };
-  // function handleAdd() {
-  //   const dataSource = tableData
-  //   console.log(count)
-  //   const newData = {
-  //     key: count,
-  //     name: `Edward King ${count}`,
-  //     age: '32',
-  //     address: `London, Park Lane no. ${count}`,
-  //   }
-  //   setCount(count + 1)
-  //   setTableData([...dataSource, newData])
-  // };
   function handleSave(row) {
     const newData = [...tableData]
     const index = newData.findIndex((item) => row.key === item.key)
@@ -69,7 +14,6 @@ const EditableTable = ({ data }) => {
 
   const components = {
     body: {
-      row: EditableRow,
       cell: EditableCell
     }
   }
@@ -93,16 +37,9 @@ const EditableTable = ({ data }) => {
 
   return (
     <div>
-      {/* <Button
-        onClick={handleAdd}
-        type="primary"
-        style={{
-          marginBottom: 16,
-        }}
-      >
-        <PlusOutlined />
-      </Button> */}
       <Table
+        pagination={false}
+        size="small"
         components={components}
         bordered
         dataSource={tableData}

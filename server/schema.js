@@ -141,6 +141,18 @@ const typeDefs = gql`
       currentWounds: Int
     ): Character
 
+    updateCharacter(
+      id: ID
+      bio: BioInput
+      stats: StatsInput
+      basicSkills: [BasicSkillInput]
+      # adv
+      talents: [TalentInput]
+      fate: FateInput
+      resolve: ResolveInput
+      currentWounds: Int
+    ): Character
+
     addUser(name: String, email: String): User
   }
 `;

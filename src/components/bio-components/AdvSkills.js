@@ -1,8 +1,8 @@
 import React from 'react';
-import { Row, Col, Table, Button } from 'antd';
+import { Row, Col } from 'antd';
 import EditableTable from './table-components/EditableTable';
 
-const BscSkills = ({ advSkills, stats }) => {
+const AdvSkills = ({ advSkills, stats }) => {
   function totalSkill({stat, adv}) {
     const skill = stats[stat].stat + adv;
     return skill;
@@ -12,17 +12,20 @@ const BscSkills = ({ advSkills, stats }) => {
     {
       title: 'Advanced Skills',
       dataIndex: 'name',
-      key: 'name'
+      key: 'name',
+      editable: true
     },
     {
       title: 'Stat',
       dataIndex: 'stat',
-      key: 'stat'
+      key: 'stat',
+      editable: true
     },
     {
       title: 'Adv',
       dataIndex: 'adv',
-      key: 'adv'
+      key: 'adv',
+      editable: true
     },
     {
       title: 'Total',
@@ -79,41 +82,30 @@ const BscSkills = ({ advSkills, stats }) => {
     for(i; i < 13; i++){
       advData1.push({
         key: i,
-        name: "_________",
-        stat: "__",
-        adv: "__",
-        total: "__"
+        name: "",
+        stat: "",
+        adv: "",
+        total: ""
       })
       advData2.push({
         key: i,
-        name: "_________",
-        stat: "__",
-        adv: "__",
-        total: "__"
+        name: "",
+        stat: "",
+        adv: "",
+        total: ""
       })
     }
   }
 
-
-  const dataSource = [
-    {
-      key: '0',
-      name: 'Edward King 0',
-      age: '32',
-      address: 'London, Park Lane no. 0',
-    },
-    {
-      key: '1',
-      name: 'Edward King 1',
-      age: '32',
-      address: 'London, Park Lane no. 1',
-    },
-  ]
-
   return(
     <Row>
-      <EditableTable data={dataSource} />
       <Col span={12}>
+        <EditableTable data={advData1} columns={advColumns}/>
+      </Col>
+      <Col span={12}>
+        <EditableTable data={advData2} columns={advColumns}/>
+      </Col>
+      {/* <Col span={12}>
         <Table
           pagination={false}
           size="small"
@@ -132,9 +124,9 @@ const BscSkills = ({ advSkills, stats }) => {
           dataSource={advData2}
           rowKey="key"
         />
-      </Col>
+      </Col> */}
     </Row>
   );
 }
 
-export default BscSkills;
+export default AdvSkills;

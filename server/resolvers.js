@@ -60,6 +60,17 @@ const resolvers = {
           console.log(err)
         })
     },
+    updateCharacter (parent, args, context, info) {
+      const { id, bio, stats, basicSkills, talents, fate, resolve, currentWounds } = args
+      const charObj = Character.findOneAndUpdate({_id: id}, {bio, stats, basicSkills, talents, fate, resolve, currentWounds}, {new: true})
+      return charObj
+        .then(result => {
+          return { ...result._doc}
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
     addUser (parent, args, context, info) {
       const { name, email } = args
       const userObj = new User({
