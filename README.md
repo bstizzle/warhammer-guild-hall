@@ -1,8 +1,8 @@
 # Warhammer Fantasy Guild Hall
 
-An Orcpub/DnDBeyond style site for storing/updating campaigns and character sheets for Warhammer Fantasy Roleplay 4th Edition
+An Orcpub/DnDBeyond style site for creating/saving/updating campaigns and character sheets for Warhammer Fantasy Roleplay 4th Edition
 
-Using React/Redux, but might switch to just using useContext hooks
+Using React hooks and Ant Design for frontend, Apollo GraphQL and MongoDB for backend
 
 ## Planned features:
 - Create and store multiple characters
