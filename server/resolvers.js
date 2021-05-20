@@ -64,7 +64,7 @@ const resolvers = {
     updateCharacter: async (parent, args, context, info) => {
       const { id, bio, stats, basicSkills, talents, fate, resolve, currentWounds } = args
       const charObj = await Character.findOne({_id: id})
-      charObj.bio = bio;
+      charObj.bio.name = bio.name;
 
       return charObj.save()
         .then(result => {
