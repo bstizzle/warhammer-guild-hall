@@ -88,6 +88,8 @@ const GET_CHARACTER = gql`
   }
 `
 
+export const CharContext = React.createContext(null);
+
 const CharacterSheet = () => {
   const [char, setChar] = useState();
   const { loading, error, data } = useQuery(GET_CHARACTER)
@@ -103,36 +105,36 @@ const CharacterSheet = () => {
     console.log(char)
 
     return(
-      <>
-      <Row>
-        <Col span={16}>
-          {char ? <Bio bio={char.bio} /> : null}
-          {char ? <Stats stats={char.stats} /> : null}
-          <Row>
-            {char ? <Fate fate={char.fate} /> : null}
-            {char ? <Resolve resolve={char.resolve} /> : null}
-            {char ? <Wounds stats={char.stats} currentWounds={char.currentWounds} /> : null}
-          </Row>
-          {char ? <SkillsSelector stats={char.stats} advSkills={char.advSkills} basicSkills={char.basicSkills} talents={char.talents} /> : null}
-        </Col>
-        <Col span={8}>
-          <DetailSelector />
-        </Col>
-        {/*
-          Experience
-          Movement
-          Ambitions
-          Party
-          Armor Points
-          Psychology
-          Corruption/Mutation
-          Spells
-          Wounds
-          Wealth
-          Encumberance
-        */}
-      </Row>
-      </>
+      <CharContext.Provider value={char}>
+        <Row>
+          <Col span={16}>
+            <Bio />
+            <Stats />
+            <Row>
+              <Fate />
+              <Resolve />
+              <Wounds />
+            </Row>
+            <SkillsSelector />
+          </Col>
+          <Col span={8}>
+            <DetailSelector />
+          </Col>
+          {/*
+            Experience
+            Movement
+            Ambitions
+            Party
+            Armor Points
+            Psychology
+            Corruption/Mutation
+            Spells
+            Wounds
+            Wealth
+            Encumberance
+          */}
+        </Row>
+      </CharContext.Provider>
     )
   }
 }

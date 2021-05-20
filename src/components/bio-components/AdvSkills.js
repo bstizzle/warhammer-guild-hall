@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharacterSheet';
 import { Row, Col } from 'antd';
 import EditableTable from './table-components/EditableTable';
 
-const AdvSkills = ({ advSkills, stats }) => {
+const AdvSkills = () => {
+  const advSkills = useContext(CharContext).advSkills;
+  const stats = useContext(CharContext).stats;
+
   function totalSkill({stat, adv}) {
     const skill = stats[stat].stat + adv;
     return skill;

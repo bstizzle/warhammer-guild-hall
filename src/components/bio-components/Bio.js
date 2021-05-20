@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CharContext } from '../CharacterSheet';
 import { Descriptions, Typography } from 'antd'
 const { Text } = Typography
 
-const Bio = ({ bio }) => {
+const Bio = () => {
+  const bio = useContext(CharContext).bio;
+
   //controlled form state
   const [nameStr, setNameStr] = useState(bio.name)
   const [specStr, setSpecStr] = useState(bio.species)

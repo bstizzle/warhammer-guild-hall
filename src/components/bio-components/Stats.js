@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharacterSheet';
 import StatItem from './StatItem';
 
 import { Descriptions } from 'antd';
 
-const Stats = ({ stats }) => {
+const Stats = () => {
+  const stats = useContext(CharContext).stats;
   const statKeys = Object.keys(stats)
 
   const allStats = statKeys.map(s => {

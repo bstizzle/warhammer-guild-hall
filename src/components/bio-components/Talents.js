@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharacterSheet';
 import { Table, Row, Col } from 'antd';
 
-const Talents = ({ talents }) => {
+const Talents = () => {
+  const talents = useContext(CharContext).talents;
+  
   const columns = [
     {
       title: 'Talents',

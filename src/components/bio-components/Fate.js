@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharacterSheet';
 import { Col, Descriptions } from 'antd';
 
-const Fate = ({ fate }) => {
+const Fate = () => {
+  const fate = useContext(CharContext).fate;
   const fateKeys = Object.keys(fate);
   const fateItems = fateKeys.map(f => {
     if(f !== '__typename'){

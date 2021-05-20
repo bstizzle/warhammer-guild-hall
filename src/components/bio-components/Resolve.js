@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharacterSheet';
 import { Col, Descriptions } from 'antd';
 
-const Resolve = ({ resolve }) => {
+const Resolve = () => {
+  const resolve = useContext(CharContext).resolve;
   const resolveKeys = Object.keys(resolve);
   const resolveItems = resolveKeys.map(r => {
     if(r !== '__typename'){
