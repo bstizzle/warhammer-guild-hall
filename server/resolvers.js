@@ -67,6 +67,12 @@ const resolvers = {
       console.log(id)
       const charObj = await Character.findOne({_id: id})
       charObj.bio = input.bio
+      charObj.stats = input.stats
+      charObj.basicSkills = input.basicSkills
+      charObj.talents = input.talents
+      charObj.fate = input.fate
+      charObj.resolve = input.resolve
+      charObj.currentWounds = input.currentWounds
 
       return charObj.save()
         .then(result => {
