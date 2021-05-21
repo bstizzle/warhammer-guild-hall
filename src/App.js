@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+import { CharContextProvider } from './components/CharContextProvider';
+
 import CharacterSheet from './components/CharacterSheet';
 import Banner from './components/Banner';
 import Home from './components/Home';
@@ -25,7 +27,9 @@ function App() {
             <Home />
           </Route>
           <Route path='/sheet'>
-            <CharacterSheet />
+            <CharContextProvider>
+              <CharacterSheet />
+            </CharContextProvider>
           </Route>
         </Content>
       </Layout>

@@ -129,6 +129,17 @@ const typeDefs = gql`
     times: Int
   }
 
+  input CharacterInput {
+    bio: BioInput
+    stats: StatsInput
+    basicSkills: [BasicSkillInput]
+    # advSkills: [AdvSkill]
+    talents: [TalentInput]
+    fate: FateInput
+    resolve: ResolveInput
+    currentWounds: Int
+  }
+
   type Mutation {
     addCharacter(
       userId: String
@@ -142,17 +153,19 @@ const typeDefs = gql`
       currentWounds: Int
     ): Character
 
-    updateCharacter(
-      id: ID
-      bio: BioInput
-      stats: StatsInput
-      basicSkills: [BasicSkillInput]
+    # updateCharacter(
+    #  id: ID
+    #  bio: BioInput
+    #  stats: StatsInput
+    #  basicSkills: [BasicSkillInput]
       # adv
-      talents: [TalentInput]
-      fate: FateInput
-      resolve: ResolveInput
-      currentWounds: Int
-    ): Character
+    #  talents: [TalentInput]
+    #  fate: FateInput
+    #  resolve: ResolveInput
+    #  currentWounds: Int
+    #): Character
+
+    updateCharacter(id: ID, input: CharacterInput): Character
 
     addUser(name: String, email: String): User
   }
