@@ -6,6 +6,7 @@ const { Text } = Typography;
 const EditableCell = ({ editable, children, record }) => {
   const { char, setChar } = useContext(CharContext);
   const [field, setField] = useState(children[1].toString())
+  // console.log(record)
   const bscSkillKeys = char.basicSkills.map((s) => {
     return s.name
   })
@@ -27,6 +28,27 @@ const EditableCell = ({ editable, children, record }) => {
           basicSkills: updatedSkills
         }))
       }
+    } else if(record.times) {
+      const index = char.talents.findIndex(t => t.name === record.name)
+      const updatedTalents = char.talents
+      // console.log(updatedTalents)
+      if(Number.isInteger(parseInt(field, 10))){
+        console.log('is number')
+        updatedTalents.splice(index, 1, {
+          name: record.name,
+          times: parseInt(field, 10)
+        })
+      } else {
+        updatedTalents.splice(index, 1, {
+          name: field,
+          times: record.times
+        })
+      } 
+      // console.log(updatedTalents)
+      setChar(char => ({
+        ...char,
+        talents: updatedTalents
+      }))
     }
   }, [field])
 
