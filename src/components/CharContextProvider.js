@@ -7,7 +7,7 @@ export const CharContext = React.createContext(null);
 
 const GET_CHARACTER = gql`
   {
-    character(id: "60a722d8890cf23a6079b708"){
+    character(id: "60a9f0ba4757d05458493d19"){
       _id
       bio {
         name

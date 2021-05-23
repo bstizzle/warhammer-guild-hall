@@ -1,7 +1,8 @@
 
 export const isBioCell = (char, setChar, record, field) => {
-  const index = char.basicSkills.findIndex(s => s.name === record.name)
+  const index = record.key
   const numField = parseInt(field, 10)
+  //makes sure we don't overwrite the adv value when total updates
   if(numField !== record.total){
     const updatedSkills = char.basicSkills
     updatedSkills.splice(index, 1, {
@@ -17,24 +18,25 @@ export const isBioCell = (char, setChar, record, field) => {
   }
 }
 
-//change createCharacter mutation to create talents/advskills with
-//26 empty columns, so no need to push new talents/skills to the lists
-//just edit empty ones
 export const isTalentCell = (char, setChar, record, field) => {
-  const index = char.talents.findIndex(t => t.name === record.name)
+  const index = record.key
+  console.log(record.key)
   const updatedTalents = char.talents
+  //check whether we are updating the name or the times
   if(Number.isInteger(parseInt(field, 10))){
     console.log('is number')
     updatedTalents.splice(index, 1, {
       name: record.name,
       times: parseInt(field, 10)
     })
+    console.log(updatedTalents)
   } else {
     console.log('is name')
     updatedTalents.splice(index, 1, {
       name: field,
       times: record.times
     })
+    console.log(updatedTalents)
   }
   setChar(char => ({
     ...char,

@@ -14,10 +14,10 @@ const EditableCell = ({ editable, children, record }) => {
   })
 
   useEffect(() => {
-    console.log(field, record)
+    console.log(record)
     if(bscSkillKeys.includes(record.name)) {
       isBioCell(char, setChar, record, field)
-    } else if(parseInt(record.times, 10) || record.times === "") {
+    } else if(parseInt(record.times, 10) >= 0) {
       isTalentCell(char, setChar, record, field)
     }
   }, [field])
