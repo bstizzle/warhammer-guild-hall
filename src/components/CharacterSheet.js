@@ -58,7 +58,6 @@ const CharacterSheet = () => {
         <Button 
           type="primary"
           onClick={() => {
-            console.log(char.talents)
             updateCharacter({
               variables: {
                 id: char._id,
@@ -66,6 +65,7 @@ const CharacterSheet = () => {
                   bio: char.bio,
                   stats: char.stats,
                   basicSkills: char.basicSkills,
+                  advSkills: char.advSkills,
                   talents: char.talents,
                   fate: char.fate,
                   resolve: char.resolve,

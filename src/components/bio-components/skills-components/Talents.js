@@ -19,12 +19,7 @@ const Talents = () => {
       dataIndex: 'times',
       key: 'times',
       editable: true
-    },
-    // {
-    //   title: 'Description',
-    //   dataIndex: 'desc',
-    //   key: 'desc'
-    // }
+    }
   ]
 
   let i = 0;
@@ -33,58 +28,24 @@ const Talents = () => {
   if(talents) {
     for(i; i < 26; i++){
       if(i < 13){
-        if(talents[i]){
-          data1.push({
-            key: i,
-            name: talents[i].name,
-            times: talents[i].times,
-            // desc: talents[i].desc
-          })
-        } else {
-          data1.push({
-            key: i,
-            name: "",
-            times: "",
-            // desc: ""
-          })
-        }
-      } else {
-        if(talents[i]){
-          data2.push({
-            key: i,
-            name: talents[i].name,
-            times: talents[i].times,
-            // desc: talents[i].desc
-          })
-        } else {
-          data2.push({
-            key: i,
-            name: "",
-            times: "",
-            // desc: ""
-          })
-        }
-      }
-    }
-  } else {
-    for(i; i < 26; i++){
-      if(i < 13){
         data1.push({
           key: i,
-          name: "",
-          times: "",
-          // desc: ""
+          type: 'talent',
+          name: talents[i].name,
+          times: talents[i].times
         })
+        
       } else {
         data2.push({
           key: i,
-          name: "",
-          times: "",
-          // desc: ""
+          type: 'talent',
+          name: talents[i].name,
+          times: talents[i].times
         })
+        
       }
     }
-  }
+  } 
 
   return(
     <Row>

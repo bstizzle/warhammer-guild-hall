@@ -131,7 +131,7 @@ const typeDefs = gql`
     bio: BioInput
     stats: StatsInput
     basicSkills: [SkillInput]
-    # advSkills: [SkillInput]
+    advSkills: [SkillInput]
     talents: [TalentInput]
     fate: FateInput
     resolve: ResolveInput

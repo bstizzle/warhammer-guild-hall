@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 
-import { isBscSkillCell, isTalentCell } from './cellTypeLogic';
+import { isBscSkillCell, isAdvSkillCell, isTalentCell } from './cellTypeLogic';
 
 import { CharContext } from '../CharContextProvider';
 import { Typography, InputNumber } from 'antd';
@@ -9,16 +9,15 @@ const { Text } = Typography;
 const EditableCell = ({ editable, children, record }) => {
   const { char, setChar } = useContext(CharContext);
   const [field, setField] = useState(children[1].toString())
-  const bscSkillKeys = char.basicSkills.map((s) => {
-    return s.name
-  })
 
   useEffect(() => {
     console.log(record)
     console.log(children)
-    if(bscSkillKeys.includes(record.name)) {
+    if(record.type === 'bscSkill') {
       isBscSkillCell(char, setChar, record, field)
-    } else if(parseInt(record.times, 10) >= 0) {
+    } else if(record.type === 'advSkill') {
+      isAdvSkillCell(char, setChar, record, field)
+    } else if(record.type === 'talent') {
       isTalentCell(char, setChar, record, field)
     }
   }, [field])

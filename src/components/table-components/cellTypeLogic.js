@@ -4,8 +4,8 @@ export const isBscSkillCell = (char, setChar, record, field) => {
   const numField = parseInt(field, 10)
   //makes sure we don't overwrite the adv value when total updates
   if(numField !== record.total){
-    const updatedSkills = char.basicSkills
-    updatedSkills.splice(index, 1, {
+    const updatedBasics = char.basicSkills
+    updatedBasics.splice(index, 1, {
       name: record.name,
       stat: record.stat,
       adv: numField
@@ -13,18 +13,32 @@ export const isBscSkillCell = (char, setChar, record, field) => {
     console.log('is bsc skill advance!')
     setChar(char => ({
       ...char,
-      basicSkills: updatedSkills
+      basicSkills: updatedBasics
     }))
   }
 }
 
-export const isAdvSkill = (char, setChar, record, field) => {
+export const isAdvSkillCell = (char, setChar, record, field) => {
+  const index = record.key 
+  const numField = parseInt(field, 10)
   
+  if(numField !== record.total){
+    const updatedAdvs = char.advSkills
+    updatedAdvs.splice(index, 1, {
+      name: record.name,
+      stat: record.stat,
+      adv: numField
+    })
+    console.log('is adv skill advance!')
+    setChar(char => ({
+      ...char,
+      advSkills: updatedAdvs
+    }))
+  }
 }
 
 export const isTalentCell = (char, setChar, record, field) => {
   const index = record.key
-  console.log(record.key)
   const updatedTalents = char.talents
   //check whether we are updating the name or the times
   if(Number.isInteger(parseInt(field, 10))){
