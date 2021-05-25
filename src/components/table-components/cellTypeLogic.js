@@ -1,5 +1,5 @@
 
-export const isBioCell = (char, setChar, record, field) => {
+export const isBscSkillCell = (char, setChar, record, field) => {
   const index = record.key
   const numField = parseInt(field, 10)
   //makes sure we don't overwrite the adv value when total updates
@@ -10,12 +10,16 @@ export const isBioCell = (char, setChar, record, field) => {
       stat: record.stat,
       adv: numField
     })
-    console.log('cell effect!')
+    console.log('is bsc skill advance!')
     setChar(char => ({
       ...char,
       basicSkills: updatedSkills
     }))
   }
+}
+
+export const isAdvSkill = (char, setChar, record, field) => {
+  
 }
 
 export const isTalentCell = (char, setChar, record, field) => {

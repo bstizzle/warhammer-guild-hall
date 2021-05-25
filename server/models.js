@@ -29,9 +29,8 @@ const StatsSchema = new Schema({
   Fel: { type: StatSchema },
 })
 
-const BasicSkillSchema = new Schema({
+const SkillSchema = new Schema({
   name: { type: String },
-  desc: { type: String },
   stat: { type: String },
   adv: { type: Number }
 })
@@ -55,7 +54,8 @@ const CharacterSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   bio: { type: BioSchema },
   stats: { type: StatsSchema },
-  basicSkills: { type: [BasicSkillSchema] },
+  basicSkills: { type: [SkillSchema] },
+  advSkills: { type: [SkillSchema] },
   talents: { type: [TalentSchema] },
   fate: { type: FateSchema },
   resolve: { type: ResolveSchema },

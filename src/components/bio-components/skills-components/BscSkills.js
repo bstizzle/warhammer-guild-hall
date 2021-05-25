@@ -45,6 +45,7 @@ const BscSkills = () => {
     if(i < 13){ 
       bscData1.push({
         key: i,
+        type: 'bscSkill',
         name: k.name,
         stat: k.stat,
         adv: k.adv,
@@ -53,6 +54,7 @@ const BscSkills = () => {
     } else {
       bscData2.push({
         key: i,
+        type: 'bscSkill',
         name: k.name,
         stat: k.stat,
         adv: k.adv,

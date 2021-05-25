@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 
-import { isBioCell, isTalentCell } from './cellTypeLogic';
+import { isBscSkillCell, isTalentCell } from './cellTypeLogic';
 
 import { CharContext } from '../CharContextProvider';
-import { Typography } from 'antd';
+import { Typography, InputNumber } from 'antd';
 const { Text } = Typography;
 
 const EditableCell = ({ editable, children, record }) => {
@@ -15,8 +15,9 @@ const EditableCell = ({ editable, children, record }) => {
 
   useEffect(() => {
     console.log(record)
+    console.log(children)
     if(bscSkillKeys.includes(record.name)) {
-      isBioCell(char, setChar, record, field)
+      isBscSkillCell(char, setChar, record, field)
     } else if(parseInt(record.times, 10) >= 0) {
       isTalentCell(char, setChar, record, field)
     }
@@ -24,7 +25,11 @@ const EditableCell = ({ editable, children, record }) => {
 
   let childNode = children;
   if(editable){
-    childNode = <Text editable={{onChange: setField}}>{field}</Text>
+    if(parseInt(field, 10) >= 0){
+      childNode = <InputNumber size="small" style={{maxWidth: '40%'}} min={0} max={99} defaultValue={field} onChange={setField} />
+    } else {
+      childNode = <Text editable={{onChange: setField}}>{field}</Text>
+    }
   }
 
   return <td>{childNode}</td>;

@@ -30,10 +30,9 @@ const typeDefs = gql`
     Fel: Stat
   }
 
-  type BasicSkill {
+  type Skill {
     _id: String
     name: String
-    desc: String
     stat: String
     adv: Int
   }
@@ -58,8 +57,8 @@ const typeDefs = gql`
     userId: String  
     bio: Bio
     stats: Stats
-    basicSkills: [BasicSkill]
-    # advSkills: [AdvSkill]
+    basicSkills: [Skill]
+    advSkills: [Skill]
     talents: [Talent]
     fate: Fate
     resolve: Resolve
@@ -107,9 +106,8 @@ const typeDefs = gql`
     Fel: StatInput
   }
 
-  input BasicSkillInput {
+  input SkillInput {
     name: String
-    desc: String
     stat: String
     adv: Int
   }
@@ -132,8 +130,8 @@ const typeDefs = gql`
   input CharacterInput {
     bio: BioInput
     stats: StatsInput
-    basicSkills: [BasicSkillInput]
-    # advSkills: [AdvSkill]
+    basicSkills: [SkillInput]
+    # advSkills: [SkillInput]
     talents: [TalentInput]
     fate: FateInput
     resolve: ResolveInput
@@ -145,25 +143,13 @@ const typeDefs = gql`
       userId: String
       bio: BioInput
       stats: StatsInput
-      basicSkills: [BasicSkillInput]
-      # adv
+      basicSkills: [SkillInput]
+      advSkills: [SkillInput]
       talents: [TalentInput]
       fate: FateInput
       resolve: ResolveInput
       currentWounds: Int
     ): Character
-
-    # updateCharacter(
-    #  id: ID
-    #  bio: BioInput
-    #  stats: StatsInput
-    #  basicSkills: [BasicSkillInput]
-      # adv
-    #  talents: [TalentInput]
-    #  fate: FateInput
-    #  resolve: ResolveInput
-    #  currentWounds: Int
-    #): Character
 
     updateCharacter(id: ID, input: CharacterInput): Character
 

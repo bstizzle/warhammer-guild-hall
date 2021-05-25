@@ -8,8 +8,8 @@ const AdvSkills = () => {
   const advSkills = char.advSkills;
   const stats = char.stats;
 
-  function totalSkill({stat, adv}) {
-    const skill = stats[stat].stat + adv;
+  function totalSkill(stat, adv) {
+    let skill = stats[stat].stat + stats[stat].adv + adv;
     return skill;
   }
 
@@ -39,68 +39,32 @@ const AdvSkills = () => {
     }
   ]
 
-  let i = 0;
-  const advData1 = [];
-  const advData2 = [];
-  if(advSkills) {
-    advSkills.forEach(k => {
-      if(i < 13){ 
-        if(k.name){
-          advData1.push({
-            key: i,
-            name: k.name,
-            stat: k.stat,
-            adv: k.adv,
-            total: totalSkill(k.stat, k.adv)
-          })
-        } else {
-          advData1.push({
-            key: i,
-            name: "hi",
-            stat: "hi",
-            adv: "hi",
-            total: "hi"
-          })
-        }
-      } else {
-        if(k.name){
-          advData2.push({
-            key: i,
-            name: k.name,
-            stat: k.stat,
-            adv: k.adv,
-            total: totalSkill(k.stat, k.adv)
-          })
-        } else {
-          advData2.push({
-            key: i,
-            name: "hi",
-            stat: "hi",
-            adv: "hi",
-            total: "hi"
-          })
-        }
-      i++;
-      }
-    })
-  } else {
-    for(i; i < 13; i++){
+  let i = 0
+  const advData1 = []
+  const advData2 = []
+  advSkills.forEach(k => {
+    const total = totalSkill(k.stat, k.adv)
+    if(i < 13){ 
       advData1.push({
         key: i,
-        name: "",
-        stat: "",
-        adv: "",
-        total: ""
+        type: 'advSkill',
+        name: k.name,
+        stat: k.stat,
+        adv: k.adv,
+        total: total
       })
+    } else {
       advData2.push({
         key: i,
-        name: "",
-        stat: "",
-        adv: "",
-        total: ""
+        type: 'advSkill',
+        name: k.name,
+        stat: k.stat,
+        adv: k.adv,
+        total: total
       })
     }
-  }
+    i++;
+  })
 
   return(
     <Row>
