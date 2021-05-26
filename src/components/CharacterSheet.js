@@ -58,6 +58,7 @@ const CharacterSheet = () => {
         <Button 
           type="primary"
           onClick={() => {
+            console.log(char.advSkills)
             updateCharacter({
               variables: {
                 id: char._id,

@@ -70,6 +70,7 @@ const resolvers = {
       charObj.bio = input.bio
       charObj.stats = input.stats
       charObj.basicSkills = input.basicSkills
+      charObj.advSkills = input.advSkills
       charObj.talents = input.talents
       charObj.fate = input.fate
       charObj.resolve = input.resolve
