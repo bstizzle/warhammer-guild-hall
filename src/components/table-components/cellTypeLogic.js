@@ -1,3 +1,5 @@
+const statKeyStr = 'WSBSSTIAgDexIntWPFel'
+
 
 export const isBscSkillCell = (char, setChar, record, field) => {
   const index = record.key
@@ -22,16 +24,24 @@ export const isAdvSkillCell = (char, setChar, record, field) => {
   const index = record.key 
   const numField = parseInt(field, 10)
   if(isNaN(numField)){
-    const updatedNames = char.advSkills
-    updatedNames.splice(index, 1, {
-      name: field,
-      stat: record.stat,
-      adv: record.adv
-    })
+    const updatedAdvStrs = char.advSkills
+    if(statKeyStr.includes(field)){
+      updatedAdvStrs.splice(index, 1, {
+        name: record.name,
+        stat: field,
+        adv: record.adv
+      })
+    } else {
+      updatedAdvStrs.splice(index, 1, {
+        name: field,
+        stat: record.stat,
+        adv: record.adv
+      })
+    }
     console.log('is adv skill name!')
     setChar(char => ({
       ...char,
-      advSkills: updatedNames
+      advSkills: updatedAdvStrs
     }))
   } else if(numField !== record.total) {
     const updatedAdvs = char.advSkills
