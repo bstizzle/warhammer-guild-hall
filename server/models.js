@@ -50,6 +50,27 @@ const ResolveSchema = new Schema({
   resilience: { type: Number }
 })
 
+const ArmorSchema = new Schema({
+  name: { type: String },
+  location: { type: String },
+  enc: { type: Number },
+  ap: { type: Number },
+  qualities: { type: String }
+})
+
+const WeaponSchema = new Schema({
+  name: { type: String },
+  enc: { type: Number },
+  damage: { type: Number },
+  qualities: { type: String }
+})
+
+const TrappingSchema = new Schema({
+  name: { type: String },
+  amount: { type: Number },
+  enc: { type: Number }
+})
+
 const CharacterSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   bio: { type: BioSchema },
@@ -59,7 +80,10 @@ const CharacterSchema = new Schema({
   talents: { type: [TalentSchema] },
   fate: { type: FateSchema },
   resolve: { type: ResolveSchema },
-  currentWounds: { type: Number }
+  currentWounds: { type: Number },
+  armor: { type: [ArmorSchema] },
+  weapons: { type: [WeaponSchema] },
+  trappings: { type: [TrappingSchema] }
 })
 
 const UserSchema = new Schema({

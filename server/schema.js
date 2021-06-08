@@ -52,6 +52,27 @@ const typeDefs = gql`
     times: Int
   }
 
+  type Armor {
+    name: String
+    location: String
+    enc: Int
+    ap: Int
+    qualities: String
+  }
+
+  type Weapon {
+    name: String
+    enc: Int
+    damage: Int
+    qualities: String
+  }
+
+  type Trapping {
+    name: String
+    amount: Int
+    enc: Int
+  }
+
   type Character {
     _id: String
     userId: String  
@@ -63,6 +84,9 @@ const typeDefs = gql`
     fate: Fate
     resolve: Resolve
     currentWounds: Int
+    armor: [Armor]
+    weapons: [Weapon]
+    trappings: [Trapping]
   }
 
   type User {
@@ -127,6 +151,27 @@ const typeDefs = gql`
     times: Int
   }
 
+  input Armor {
+    name: String
+    location: String
+    enc: Int
+    ap: Int
+    qualities: String
+  }
+
+  input Weapon {
+    name: String
+    enc: Int
+    damage: Int
+    qualities: String
+  }
+
+  input Trapping {
+    name: String
+    amount: Int
+    enc: Int
+  }
+
   input CharacterInput {
     bio: BioInput
     stats: StatsInput
@@ -136,6 +181,9 @@ const typeDefs = gql`
     fate: FateInput
     resolve: ResolveInput
     currentWounds: Int
+    armor: [ArmorInput]
+    weapons: [WeaponInput]
+    trappings: [TrappingInput]
   }
 
   type Mutation {
