@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharContextProvider';
 import EditableTable from '../table-components/EditableTable';
 
-const Armor = () => {
+const Weapons = () => {
+  const { char } = useContext(CharContext);
+  const weapons = char.weapons;
+
   const columns = [
     {
       title: 'Name',
@@ -29,17 +33,22 @@ const Armor = () => {
     }
   ]
 
-  const data = [{
-    name: 'Sword',
-    enc: 1,
-    damage: 5,
-    qualities: 'blank',
-    key: 0
-  }]
+  let i = 0
+  const weaponData = []
+  weapons.forEach(w => {
+    weaponData.push({
+      key: i,
+      type: 'weapon',
+      name: w.name,
+      enc: w.enc,
+      damage: w.damage,
+      qualities: w.qualities
+    })
+  })
 
   return(
-    <EditableTable data={data} columns={columns} />
+    <EditableTable data={weaponData} columns={columns} />
   );
 }
 
-export default Armor;
+export default Weapons;

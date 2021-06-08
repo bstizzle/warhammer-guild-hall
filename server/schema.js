@@ -151,7 +151,7 @@ const typeDefs = gql`
     times: Int
   }
 
-  input Armor {
+  input ArmorInput {
     name: String
     location: String
     enc: Int
@@ -159,14 +159,14 @@ const typeDefs = gql`
     qualities: String
   }
 
-  input Weapon {
+  input WeaponInput {
     name: String
     enc: Int
     damage: Int
     qualities: String
   }
 
-  input Trapping {
+  input TrappingInput {
     name: String
     amount: Int
     enc: Int
@@ -187,17 +187,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addCharacter(
-      userId: String
-      bio: BioInput
-      stats: StatsInput
-      basicSkills: [SkillInput]
-      advSkills: [SkillInput]
-      talents: [TalentInput]
-      fate: FateInput
-      resolve: ResolveInput
-      currentWounds: Int
-    ): Character
+    addCharacter(userId: String, input: CharacterInput): Character
 
     updateCharacter(id: ID, input: CharacterInput): Character
 

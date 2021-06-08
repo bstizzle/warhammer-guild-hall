@@ -41,7 +41,10 @@ const resolvers = {
   },
   Mutation: {
     addCharacter (parent, args, context, info) {
-      const { userId, bio, stats, basicSkills, advSkills, talents, fate, resolve, currentWounds } = args
+      const userId = args.userId
+      const { bio, stats, basicSkills, advSkills, 
+        talents, fate, resolve, currentWounds,
+        armor, weapons, trappings } = args.input
       const charObj = new Character({
         userId,
         bio,
@@ -51,7 +54,10 @@ const resolvers = {
         talents,
         fate,
         resolve,
-        currentWounds
+        currentWounds,
+        armor,
+        weapons,
+        trappings
       })
       return charObj.save()
         .then(result => {

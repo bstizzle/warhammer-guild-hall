@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharContextProvider';
 import EditableTable from '../table-components/EditableTable';
 
 const Armor = () => {
-
+  const { char } = useContext(CharContext)
+  const armors = char.armor;
+  
   const columns = [
     {
       title: 'Name',
@@ -36,17 +39,22 @@ const Armor = () => {
     }
   ]
 
-  const data = [{
-    name: 'Leather Jerkin',
-    location: 'Chest',
-    enc: 1,
-    ap: 1,
-    qualities: 'blank',
-    key: 0
-  }]
+  let i = 0
+  const armorData = []
+  armors.forEach(a => {
+    armorData.push({
+      key: i,
+      type: 'armor',
+      name: a.name,
+      location: a.location,
+      enc: a.enc,
+      ap: a.ap,
+      qualities: a.qualities
+    })
+  })
 
   return(
-    <EditableTable data={data} columns={columns} />
+    <EditableTable data={armorData} columns={columns} />
   );
 }
 

@@ -7,7 +7,7 @@ export const CharContext = React.createContext(null);
 
 const GET_CHARACTER = gql`
   {
-    character(id: "60ac3ebccce46811084a7cdc"){
+    character(id: "60bfb0276c947f3a4c342e17"){
       _id
       bio {
         name
@@ -83,6 +83,24 @@ const GET_CHARACTER = gql`
         resilience
       }
       currentWounds
+      armor {
+        name
+        location
+        enc
+        ap
+        qualities
+      }
+      weapons {
+        name
+        enc
+        damage
+        qualities
+      }
+      trappings {
+        name
+        amount
+        enc
+      }
     }
   }
 `

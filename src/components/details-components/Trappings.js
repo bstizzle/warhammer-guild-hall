@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CharContext } from '../CharContextProvider';
 import EditableTable from '../table-components/EditableTable';
 
 const Trappings = () => {
+  const { char } = useContext(CharContext);
+  const trappings = char.trappings;
 
   const columns = [
     {
@@ -24,23 +27,20 @@ const Trappings = () => {
     }
   ]
 
-  const data = [
-    {
-      name: 'Cloak',
-      amount: 1,
-      enc: 1,
-      key: 0
-    },
-    {
-      name: 'Animal Traps',
-      amount: 2,
-      enc: 2,
-      key: 1
-    }
-  ]
+  let i = 0
+  const trappingData = []
+  trappings.forEach(t => {
+    trappingData.push({
+      key: i,
+      type: 'trapping',
+      name: t.name,
+      amount: t.amount,
+      enc: t.enc
+    })
+  })
 
   return(
-    <EditableTable data={data} columns={columns} />
+    <EditableTable data={trappingData} columns={columns} />
   );
 }
 
