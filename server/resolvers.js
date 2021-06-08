@@ -14,7 +14,6 @@ const resolvers = {
     character (parent, args, context, info) {
       return Character.findOne({ _id: args.id })
         .then (character => {
-          console.log(character.basicSkills.filter(s => s.name === 'Bribery'))
           return { ...character._doc }
         })
         .catch (err => {
@@ -64,8 +63,6 @@ const resolvers = {
     },
     updateCharacter: async (parent, args, context, info) => {
       const { id, input } = args
-      console.log(input)
-      console.log(id)
       const charObj = await Character.findOne({_id: id})
       charObj.bio = input.bio
       charObj.stats = input.stats
