@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Row, Col, Button } from 'antd';
 import { CharContext } from './CharContextProvider';
-import DetailSelector from './details-components/DetailSelector';
-import { Stats, SkillsSelector, Bio, Fate, Resolve, Wounds } from './bio-components/bioExport';
+import { Stats, DetailSelector, Bio, Fate, Resolve, Wounds } from './bio-components/bioExport';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -36,10 +35,10 @@ const CharacterSheet = () => {
             <Resolve />
             <Wounds />
           </Row>
-          <SkillsSelector />
+          <DetailSelector />
         </Col>
         <Col span={8}>
-          <DetailSelector />
+          PLACEHOLDER COLUMN
         </Col>
         {/*
           Experience

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { CharContext } from '../CharContextProvider';
-import EditableTable from '../table-components/EditableTable';
+import { CharContext } from '../../CharContextProvider';
+import EditableTable from '../../table-components/EditableTable';
 
 const Armor = () => {
   const { char } = useContext(CharContext)
