@@ -21,6 +21,6 @@ mongoose.connect(config.DB_URI || process.env.MONGODB_URI, {
     console.log('Error connecting to MongoDB', error)
 })
 
-app.listen({ port: port }, (port) => {
+app.listen(port, () => {
   console.log(`🚀 Server ready at ${port}`);
 });
