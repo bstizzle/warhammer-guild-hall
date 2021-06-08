@@ -54,6 +54,7 @@ const EditableCell = ({ editable, children, record }) => {
     } else if(record.type === 'talent') {
       isTalentCell(char, setChar, record, field)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [field])
   //filling this dependency array with what React wants creates untenable lag
   //field is the only dependency it needs, and it has been tested to ensure there is no
