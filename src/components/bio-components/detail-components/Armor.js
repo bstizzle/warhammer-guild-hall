@@ -51,7 +51,21 @@ const Armor = () => {
       ap: a.ap,
       qualities: a.qualities
     })
+    i++;
   })
+  if(i < 13) {
+    for(i; i < 13; i++){
+      armorData.push({
+        key: i,
+        type: 'armor',
+        name: "",
+        location: "",
+        enc: 0,
+        ap: 0,
+        qualities: ""
+      })
+    }
+  }
 
   return(
     <EditableTable data={armorData} columns={columns} />

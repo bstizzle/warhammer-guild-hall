@@ -44,7 +44,20 @@ const Weapons = () => {
       damage: w.damage,
       qualities: w.qualities
     })
+    i++;
   })
+  if(i < 13) {
+    for(i; i < 13; i++){
+      weaponData.push({
+        key: i,
+        type: 'weapon',
+        name: "",
+        enc: 0,
+        damage: 0,
+        qualities: ""
+      })
+    }
+  }
 
   return(
     <EditableTable data={weaponData} columns={columns} />

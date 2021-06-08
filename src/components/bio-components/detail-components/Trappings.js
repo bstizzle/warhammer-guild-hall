@@ -37,7 +37,19 @@ const Trappings = () => {
       amount: t.amount,
       enc: t.enc
     })
+    i++;
   })
+  if(i < 13) {
+    for(i; i < 13; i++){
+      trappingData.push({
+        key: i,
+        type: 'trapping',
+        name: "",
+        amount: 0,
+        enc: 0
+      })
+    }
+  }
 
   return(
     <EditableTable data={trappingData} columns={columns} />
