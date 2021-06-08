@@ -9,7 +9,7 @@ const server = new ApolloServer({ typeDefs, resolvers })
 const app = express();
 server.applyMiddleware({ app });
 
-mongoose.connect(config.DB_URI, {
+mongoose.connect(config.DB_URI || process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -20,6 +20,6 @@ mongoose.connect(config.DB_URI, {
     console.log('Error connecting to MongoDB', error)
 })
 
-app.listen({ port: 4000 }, () =>
-  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
-);
+app.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
+});
