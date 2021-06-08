@@ -14,7 +14,7 @@ const Wounds = () => {
       ...char,
       currentWounds: currentWounds
     }))
-  }, [currentWounds])
+  }, [setChar, currentWounds])
 
   return(
     <Col span={8}>

@@ -22,8 +22,8 @@ const UPDATE_CHARACTER = gql`
 `
 
 const CharacterSheet = () => {
-  const { char, setChar } = useContext(CharContext)
-  const [updateCharacter, { data }] = useMutation(UPDATE_CHARACTER);
+  const { char } = useContext(CharContext)
+  const [updateCharacter] = useMutation(UPDATE_CHARACTER);
 
   return(
     <>

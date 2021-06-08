@@ -17,7 +17,7 @@ const Fate = () => {
         fortune: fortState
       }
     }))
-  }, [fateState, fortState])
+  }, [setChar, fateState, fortState])
 
   return(
     <Col span={8}>

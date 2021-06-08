@@ -17,7 +17,7 @@ const Resolve = () => {
         resilience: resilState
       }
     }))
-  }, [resolveState, resilState])
+  }, [setChar, resolveState, resilState])
 
   return(
     <Col span={8}>

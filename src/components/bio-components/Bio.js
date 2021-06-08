@@ -31,8 +31,8 @@ const Bio = () => {
         }
       })
     )
-  }, [nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr])
-  // nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr
+  }, [setChar, nameStr, specStr, classStr, carStr, carLvlStr, statusStr, carPathStr])
+
   return(
     <Descriptions
       size="small"

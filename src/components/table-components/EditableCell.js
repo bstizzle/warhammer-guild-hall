@@ -47,8 +47,6 @@ const EditableCell = ({ editable, children, record }) => {
   const [field, setField] = useState(children[1].toString())
 
   useEffect(() => {
-    console.log(record)
-    console.log(children)
     if(record.type === 'bscSkill') {
       isBscSkillCell(char, setChar, record, field)
     } else if(record.type === 'advSkill') {
@@ -57,6 +55,9 @@ const EditableCell = ({ editable, children, record }) => {
       isTalentCell(char, setChar, record, field)
     }
   }, [field])
+  //filling this dependency array with what React wants creates untenable lag
+  //field is the only dependency it needs, and it has been tested to ensure there is no
+  //dead or old data when the useEffect runs
 
   let childNode = children;
   if(editable){

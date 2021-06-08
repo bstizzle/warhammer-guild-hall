@@ -21,8 +21,9 @@ const StatItem = ({ s, stats }) => {
         }
       })
     )
-  }, [init, adv])
-  
+  }, [setChar, s, init, adv])
+  //including stats in this dependency array causes infinite loop
+
   function handleVisible(){
     if(visible === false){
       setVisible(true)
