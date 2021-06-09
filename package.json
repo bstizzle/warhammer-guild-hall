@@ -1,23 +1,26 @@
 {
   "name": "warhammer-from-scratch",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@apollo/react-hooks": "^4.0.0",
-    "@craco/craco": "^6.1.2",
+    "@craco/craco": "5.5.0",
     "antd": "^4.16.2",
     "apollo-boost": "^0.4.9",
     "apollo-server-express": "^2.25.1",
     "craco-less": "^1.17.1",
+    "dayjs": "1.8.30",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "mongoose": "^5.12.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "typescript": "^4.3.2",
+    "webpack": "5.0.0"
   },
   "scripts": {
     "start": "craco start",
@@ -42,5 +45,12 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
+  },
+  "resolutions": {
+    "postcss": "^8.2.10",
+    "browserslist": "^4.16.5",
+    "glob-parent": "^5.1.2",
+    "css-what": "^5.0.1",
+    "normalize-url": "6.0.1"
   }
 }
