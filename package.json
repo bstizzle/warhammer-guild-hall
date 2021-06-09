@@ -1,36 +1,29 @@
 {
-  "name": "warhammer-guild-hall",
-  "version": "0.1.0",
-  "private": true,
-  "main": "src/index.js",
+  "name": "warhammer-from-scratch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@apollo/react-hooks": "^4.0.0",
-    "@craco/craco": "^5.9.0",
-    "@reduxjs/toolkit": "^1.5.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.15.5",
+    "@craco/craco": "^6.1.2",
+    "antd": "^4.16.2",
     "apollo-boost": "^0.4.9",
-    "apollo-server-express": "^2.24.0",
-    "axios": "^0.21.1",
+    "apollo-server-express": "^2.25.1",
     "craco-less": "^1.17.1",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
-    "mongoose": "^5.12.10",
+    "mongoose": "^5.12.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "^4.0.3"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject",
-    "dev": "concurrently \"npm start\" \"nodemon server/server.js\""
+    "server": "nodemon server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,7 +41,6 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^6.1.0",
     "nodemon": "^2.0.7"
   }
 }

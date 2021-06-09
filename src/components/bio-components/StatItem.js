@@ -21,7 +21,6 @@ const StatItem = ({ s, stats }) => {
         }
       })
     )
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setChar, s, init, adv])
   //including stats in this dependency array causes infinite loop
 
